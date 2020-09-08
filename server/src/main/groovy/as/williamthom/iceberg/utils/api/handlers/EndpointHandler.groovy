@@ -1,8 +1,8 @@
-package as.thomwilliam.utils.api.handlers
+package as.williamthom.iceberg.utils.api.handlers
 
-import as.thomwilliam.conf.UrlEntry
-import as.thomwilliam.conf.UrlStatusResult
-import as.thomwilliam.utils.api.EndpointAuthenticationType
+import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlStatusResult
+import as.williamthom.iceberg.utils.api.EndpointAuthenticationType
 
 interface EndpointHandler {
 

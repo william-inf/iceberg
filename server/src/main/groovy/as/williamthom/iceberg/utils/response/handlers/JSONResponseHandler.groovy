@@ -1,11 +1,10 @@
-package as.thomwilliam.utils.response.handlers
+package as.williamthom.iceberg.utils.response.handlers
 
-import as.thomwilliam.conf.UrlEntry
-import as.thomwilliam.conf.UrlResponseConfig
-import as.thomwilliam.conf.UrlStatusResult
-import as.thomwilliam.utils.response.ResponseType
+import as.williamthom.iceberg.conf.UrlResponseConfig
+import as.williamthom.iceberg.utils.response.ResponseType
 import groovy.util.logging.Slf4j
-import javax.inject.Singleton;
+
+import javax.inject.Singleton
 
 @Slf4j
 @Singleton

@@ -1,6 +1,6 @@
-package as.thomwilliam.utils.api.handlers.client
+package as.williamthom.iceberg.utils.api.handlers.client
 
-import as.thomwilliam.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlEntry
 import groovy.util.logging.Slf4j
 import io.micronaut.core.type.Argument
 import io.micronaut.http.HttpRequest

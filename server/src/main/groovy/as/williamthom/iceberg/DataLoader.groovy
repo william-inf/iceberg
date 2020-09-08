@@ -1,8 +1,8 @@
-package as.thomwilliam
+package as.williamthom.iceberg
 
-import as.thomwilliam.conf.ConfigManager
-import as.thomwilliam.conf.ConfigProperties
-import as.thomwilliam.utils.JSONUtils
+import as.williamthom.iceberg.conf.ConfigManager
+import as.williamthom.iceberg.conf.ConfigProperties
+import as.williamthom.iceberg.utils.JSONUtils
 import groovy.util.logging.Slf4j
 import io.micronaut.context.event.ApplicationEventListener
 import io.micronaut.runtime.server.event.ServerStartupEvent

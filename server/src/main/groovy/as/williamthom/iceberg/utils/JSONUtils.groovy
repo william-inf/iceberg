@@ -1,12 +1,11 @@
-package as.thomwilliam.utils
+package as.williamthom.iceberg.utils
 
+import com.google.gson.*
 import groovy.util.logging.Slf4j
 import io.micronaut.core.util.StringUtils
 
 import java.lang.reflect.Type
 import java.text.SimpleDateFormat
-
-import com.google.gson.*;
 
 @Slf4j
 class JSONUtils {

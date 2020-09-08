@@ -1,8 +1,7 @@
-package as.thomwilliam.endpoints
+package as.williamthom.iceberg.endpoints
 
-import as.thomwilliam.conf.ConfigManager
-import as.thomwilliam.conf.UrlEntry
-import as.thomwilliam.utils.JSONUtils
+import as.williamthom.iceberg.conf.ConfigManager
+import as.williamthom.iceberg.conf.UrlEntry
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import io.micronaut.http.MediaType
@@ -18,7 +17,6 @@ import javax.inject.Inject
 @Controller("/endpoint")
 class EndpointController {
 
-    @Inject ConfigManager configManager
     @Inject EndpointService endpointService
 
     @Get("/")

@@ -1,11 +1,11 @@
-package as.thomwilliam.status
+package as.williamthom.iceberg.status
 
-import as.thomwilliam.conf.UrlEntry
-import as.thomwilliam.conf.UrlStatusResult
-import as.thomwilliam.utils.api.handlers.EndpointHandler
-import as.thomwilliam.utils.api.handlers.EndpointHandlerFactory
-import as.thomwilliam.utils.response.handlers.ResponseHandler
-import as.thomwilliam.utils.response.handlers.ResponseHandlerFactory
+import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlStatusResult
+import as.williamthom.iceberg.utils.api.handlers.EndpointHandler
+import as.williamthom.iceberg.utils.api.handlers.EndpointHandlerFactory
+import as.williamthom.iceberg.utils.response.handlers.ResponseHandler
+import as.williamthom.iceberg.utils.response.handlers.ResponseHandlerFactory
 import groovy.util.logging.Slf4j
 import io.reactivex.Maybe
 import io.reactivex.schedulers.Schedulers

@@ -15,9 +15,9 @@ copyClientResources.doFirst {
     }
 }
 
-task assembleServerAndClient(dependsOn: ['copyClientResources', ':server:shadowJar']) {
+task packageServerAndClient(dependsOn: ['copyClientResources', ':server:shadowJar']) {
     group = 'build'
-    description = 'Build combined server & client JAR'
+    description = 'Build combined server and client JAR'
 }
 
 task test {

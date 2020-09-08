@@ -1,7 +1,7 @@
-package as.thomwilliam.utils.response.handlers
+package as.williamthom.iceberg.utils.response.handlers
 
-import as.thomwilliam.conf.UrlResponseConfig
-import as.thomwilliam.utils.response.ResponseType
+import as.williamthom.iceberg.conf.UrlResponseConfig
+import as.williamthom.iceberg.utils.response.ResponseType
 
 interface ResponseHandler {
 

@@ -1,6 +1,6 @@
-package as.thomwilliam.conf
+package as.williamthom.iceberg.conf
 
-import as.thomwilliam.utils.api.EndpointAuthenticationType
+import as.williamthom.iceberg.utils.api.EndpointAuthenticationType
 
 class UrlEntry {
     String addr

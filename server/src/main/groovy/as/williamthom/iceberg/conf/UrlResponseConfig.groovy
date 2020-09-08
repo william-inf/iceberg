@@ -1,6 +1,6 @@
-package as.thomwilliam.conf
+package as.williamthom.iceberg.conf
 
-import as.thomwilliam.utils.response.ResponseType
+import as.williamthom.iceberg.utils.response.ResponseType
 
 class UrlResponseConfig {
     ResponseType type

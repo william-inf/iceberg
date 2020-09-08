@@ -1,4 +1,4 @@
-package as.thomwilliam.conf
+package as.williamthom.iceberg.conf
 
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus

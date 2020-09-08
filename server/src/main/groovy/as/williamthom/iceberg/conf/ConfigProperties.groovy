@@ -1,4 +1,4 @@
-package as.thomwilliam.conf
+package as.williamthom.iceberg.conf
 
 class ConfigProperties {
     List<UrlEntry> urls = []

@@ -1,6 +1,6 @@
-package as.thomwilliam.utils.response.handlers
+package as.williamthom.iceberg.utils.response.handlers
 
-import as.thomwilliam.utils.response.ResponseType
+import as.williamthom.iceberg.utils.response.ResponseType
 import groovy.util.logging.Slf4j
 import io.micronaut.context.ApplicationContext
 

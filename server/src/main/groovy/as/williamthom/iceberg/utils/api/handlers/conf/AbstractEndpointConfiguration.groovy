@@ -1,6 +1,6 @@
-package as.thomwilliam.utils.api.handlers.conf
+package as.williamthom.iceberg.utils.api.handlers.conf
 
-import as.thomwilliam.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlEntry
 
 abstract class AbstractEndpointConfiguration {
     String prefix

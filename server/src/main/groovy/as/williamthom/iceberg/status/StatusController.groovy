@@ -1,14 +1,14 @@
-package as.thomwilliam.status
+package as.williamthom.iceberg.status
 
-import as.thomwilliam.conf.ConfigManager
-import as.thomwilliam.conf.UrlEntry
-import as.thomwilliam.conf.UrlStatusResult
-import as.thomwilliam.endpoints.EndpointService
+import as.williamthom.iceberg.conf.ConfigManager
+import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlStatusResult
+import as.williamthom.iceberg.endpoints.EndpointService
 import groovy.util.logging.Slf4j
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
-import io.reactivex.Single
 import io.reactivex.Observable
+import io.reactivex.Single
 
 import javax.inject.Inject
 

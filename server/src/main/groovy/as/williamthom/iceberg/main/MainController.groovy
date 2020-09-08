@@ -1,4 +1,4 @@
-package as.thomwilliam.main
+package as.williamthom.iceberg.main
 
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller
@@ -9,7 +9,6 @@ import io.micronaut.views.View
 class MainController {
 
     @Get("/")
-    @View("index")
     HttpResponse index() {
         return HttpResponse.ok();
     }

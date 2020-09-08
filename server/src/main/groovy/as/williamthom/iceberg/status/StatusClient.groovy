@@ -1,6 +1,6 @@
-package as.thomwilliam.status
+package as.williamthom.iceberg.status
 
-import as.thomwilliam.conf.UrlStatusResult
+import as.williamthom.iceberg.conf.UrlStatusResult
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.client.annotation.Client
 import io.reactivex.Single

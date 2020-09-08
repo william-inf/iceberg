@@ -1,7 +1,7 @@
-package as.thomwilliam.endpoints
+package as.williamthom.iceberg.endpoints
 
-import as.thomwilliam.conf.ConfigManager
-import as.thomwilliam.conf.UrlEntry
+import as.williamthom.iceberg.conf.ConfigManager
+import as.williamthom.iceberg.conf.UrlEntry
 import groovy.util.logging.Slf4j
 import io.reactivex.Maybe
 import io.reactivex.schedulers.Schedulers

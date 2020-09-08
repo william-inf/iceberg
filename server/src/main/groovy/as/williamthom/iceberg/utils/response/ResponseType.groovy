@@ -1,4 +1,4 @@
-package as.thomwilliam.utils.response
+package as.williamthom.iceberg.utils.response
 
 enum ResponseType {
     JSON

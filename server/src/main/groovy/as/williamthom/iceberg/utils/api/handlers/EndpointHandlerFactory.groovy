@@ -1,9 +1,10 @@
-package as.thomwilliam.utils.api.handlers
+package as.williamthom.iceberg.utils.api.handlers
 
-import as.thomwilliam.utils.api.EndpointAuthenticationType
-import io.micronaut.context.ApplicationContext
+import as.williamthom.iceberg.utils.api.EndpointAuthenticationType
 import groovy.util.logging.Slf4j
-import javax.inject.Singleton;
+import io.micronaut.context.ApplicationContext
+
+import javax.inject.Singleton
 
 @Slf4j
 @Singleton

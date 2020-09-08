@@ -1,4 +1,4 @@
-package as.thomwilliam.conf
+package as.williamthom.iceberg.conf
 
 import javax.inject.Singleton
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,4 +1,4 @@
-package as.thomwilliam.utils.api
+package as.williamthom.iceberg.utils.api
 
 enum EndpointAuthenticationType {
     Unauthenticated, Basic

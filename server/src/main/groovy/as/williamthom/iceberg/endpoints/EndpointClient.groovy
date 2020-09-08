@@ -1,6 +1,6 @@
-package as.thomwilliam.endpoints
+package as.williamthom.iceberg.endpoints
 
-import as.thomwilliam.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlEntry
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.client.annotation.Client
 import io.reactivex.Maybe
