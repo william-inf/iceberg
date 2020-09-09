@@ -13,7 +13,7 @@ import io.reactivex.Single
 import javax.inject.Inject
 
 @Slf4j
-@Controller("/status")
+@Controller("/api/status")
 class StatusController {
 
     @Inject EndpointService endpointService
@@ -21,7 +21,7 @@ class StatusController {
     @Inject ConfigManager configManager
 
     @Get("/")
-    Single<List<UrlStatusResult>> status() {
+    Single<List<UrlStatusResult>> list() {
         log.info("Controller action /status called ...")
         return Observable.fromIterable(configManager.urls)
                 .flatMap { UrlEntry entry -> statusService.fetchResult(entry).toObservable() }

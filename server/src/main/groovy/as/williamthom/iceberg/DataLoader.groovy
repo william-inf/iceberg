@@ -13,7 +13,7 @@ import javax.inject.Singleton;
 @Singleton
 class DataLoader implements ApplicationEventListener<ServerStartupEvent>{
 
-    static final String CONF_FILE_LOCATION = "/opt/status_page/status_config.conf"
+    static final String CONF_FILE_LOCATION = "/opt/iceberg/iceberg_config.conf"
 
     private ConfigManager configManager
 
