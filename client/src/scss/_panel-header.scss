@@ -1,0 +1,12 @@
+.panel-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h4 {
+        font-weight: 600;
+        color: $gray-800;
+    }
+}

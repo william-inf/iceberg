@@ -894,6 +894,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fortawesome/fontawesome-free@^5.12.0":
+  version "5.14.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.14.0.tgz#a371e91029ebf265015e64f81bfbf7d228c9681f"
+  integrity sha512-OfdMsF+ZQgdKHP9jUbmDcRrP0eX90XXrsXIdyjLbkmSBzmMXPABB8eobUJtivaupucYaByz6WNe1PI1JuYm3qA==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -1664,7 +1669,16 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aurelia-binding@^2.0.0:
+aurelia-animator-css@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/aurelia-animator-css/-/aurelia-animator-css-1.0.4.tgz#8336ab84f9a8bf60a4536e99145e73a80c0f0dac"
+  integrity sha1-gzarhPmov2CkU26ZFF5zqAwPDaw=
+  dependencies:
+    aurelia-metadata "^1.0.0"
+    aurelia-pal "^1.0.0"
+    aurelia-templating "^1.0.0"
+
+aurelia-binding@^2.0.0, aurelia-binding@^2.1.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/aurelia-binding/-/aurelia-binding-2.5.4.tgz#c1c9221dd351bbf749df5e71aedc29b993a9ada0"
   integrity sha512-tYhYCFvQne+chO3p8KntCWj0r8oCXiCOGQ0yFbthHDBpjjTA4QlBwpGQ8nlGoGDKj7n4PoobeIjN3lEDKgKUyw==
@@ -1712,12 +1726,31 @@ aurelia-deps-finder@^2.1.2:
     dumber-module-loader "^1.0.0"
     htmlparser2 "^4.1.0"
 
-aurelia-event-aggregator@^1.0.0:
+aurelia-dialog@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/aurelia-dialog/-/aurelia-dialog-2.0.0.tgz#989ac3d9ab8e66fdf1059eeebe4c7b2115d5a0b7"
+  integrity sha512-udjvkIihIhZS5YzIvDSww5eVTiJ8/FH5bM2ehz37EfE0eOrlHEpXkq6KlrOsb9+C3EqqDZ+CyH0TT0oUbcX3oA==
+  dependencies:
+    aurelia-binding "^2.1.4"
+    aurelia-dependency-injection "^1.0.0"
+    aurelia-framework "^1.0.0"
+    aurelia-metadata "^1.0.0"
+    aurelia-pal "^1.0.0"
+    aurelia-templating "^1.8.2"
+
+aurelia-event-aggregator@^1.0.0, aurelia-event-aggregator@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/aurelia-event-aggregator/-/aurelia-event-aggregator-1.0.3.tgz#80332d539a7fb680a031c4363cb1fea5ea2b8dbd"
   integrity sha512-8fSWNCgh3gIsq/MgE+njVnUlYS05D6acyC8aJECekNWYecdBz46ckEblywP1ZNHLIt3u/Ws0oMqiOp1Jjw+0hw==
   dependencies:
     aurelia-logging "^1.0.0"
+
+aurelia-fetch-client@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/aurelia-fetch-client/-/aurelia-fetch-client-1.8.2.tgz#d1252500d06e8d5bccc3891a702c0c3184436d20"
+  integrity sha512-HEQAi4CTEByesIBDqfn/YAF7ZwVQCn28npT2HknAr03orYr57klwY6y+oT3Kc1mEVe+9PU5gk2tzJiaqPXK5hw==
+  dependencies:
+    aurelia-pal "^1.3.0"
 
 aurelia-framework@^1.0.0, aurelia-framework@^1.3.0:
   version "1.3.1"
@@ -1733,6 +1766,11 @@ aurelia-framework@^1.0.0, aurelia-framework@^1.3.0:
     aurelia-path "^1.0.0"
     aurelia-task-queue "^1.0.0"
     aurelia-templating "^1.8.1"
+
+aurelia-getter-throttle@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/aurelia-getter-throttle/-/aurelia-getter-throttle-1.0.5.tgz#b7f32b4eec5b15ec7edccc5aa1fe774277b43330"
+  integrity sha512-g+Ong8aMt/cV14wxfu5ToaxTzv9ocbC0fykw7EwZEJ9vUbF4STYzgfeUtlx5ojXLpYiRmghgwSTAEz9p9uTYEw==
 
 aurelia-history-browser@^1.1.0:
   version "1.4.0"
@@ -1889,7 +1927,7 @@ aurelia-templating-router@^1.0.0:
     aurelia-path "^1.0.0"
     aurelia-templating "^1.8.1"
 
-aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.8.1:
+aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.8.1, aurelia-templating@^1.8.2:
   version "1.10.4"
   resolved "https://registry.yarnpkg.com/aurelia-templating/-/aurelia-templating-1.10.4.tgz#d42f7d07b4c970812e6ee9e9b1bd6b3727583704"
   integrity sha512-w1AtGneeRRJJPxr7QiGwTyLOsspPSF0xg1bKJnMntVhGC265SrtEAIsF1aKXOuLVTrjhx1Vi+3xPiJ560ilwtw==
@@ -2088,6 +2126,34 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bcx-aurelia-dnd@^1.3.0:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/bcx-aurelia-dnd/-/bcx-aurelia-dnd-1.5.2.tgz#91804c2a80100337f651878cd8d85471225041f3"
+  integrity sha512-+vauSryTJeGKU9zIMpDrSeAUtFenqf7rsGlVmkoZaXBxfLsj6+iql7oAVwdFBEI5RSC10Yl1epih0U69RqOipA==
+  dependencies:
+    aurelia-event-aggregator "^1.0.3"
+
+bcx-aurelia-reorderable-repeat@^1.3.0:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/bcx-aurelia-reorderable-repeat/-/bcx-aurelia-reorderable-repeat-1.3.5.tgz#c67eb717b8f764d1df25812a64241daffdaf0a51"
+  integrity sha512-hK4G027/Wpa4YCriTkAnH6whfxXkmXCdcQgJrVxHx/5/h6MzObNVEokU/5y2m8UdMuI5LzS4fwV6fYF4gVyo2w==
+  dependencies:
+    aurelia-event-aggregator "^1.0.3"
+    bcx-aurelia-dnd "^1.3.0"
+
+bcx-expression-evaluator@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/bcx-expression-evaluator/-/bcx-expression-evaluator-1.2.1.tgz#11ef1155f26fb4d1b22714aa2cb8b0b9c97cfe8b"
+  integrity sha512-ua97QzR4M3ykBTs8IAk1QcfXVCj4tXhTOOmYx9GP1Q0ZM7XuJaCRrQoIobHDMh9w4Yy1U6CLUfiOY+d1GGpALw==
+
+bcx-validation@^1.1.1:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/bcx-validation/-/bcx-validation-1.3.2.tgz#dfd64b859b736e2ebc80116b514c77e772337318"
+  integrity sha512-imICJ5P9iBCXGPFSc+Q1ibwVA0Qm34U0KW+ze6AHJ2iA8F236pNFpclHRX1sGAkhwjZ0ykPX1gnkYgeWPklU5Q==
+  dependencies:
+    bcx-expression-evaluator "^1.2.1"
+    lodash "^4.17.15"
+
 better-assert@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/better-assert/-/better-assert-1.0.2.tgz#40866b9e1b9e0b55b481894311e68faffaebc522"
@@ -2126,6 +2192,11 @@ bn.js@^5.1.1:
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.1.3.tgz#beca005408f642ebebea80b042b4d18d2ac0ee6b"
   integrity sha512-GkTiFpjFtUzU9CbMeJ5iazkCzGL3jrhzerzZIuqLABjbwRaFt33I9tUdSNryIptM+RxDet6OKm2WnLXzW51KsQ==
+
+bootstrap@^4.4.1:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.5.2.tgz#a85c4eda59155f0d71186b6e6ad9b875813779ab"
+  integrity sha512-vlGn0bcySYl/iV+BGA544JkkZP5LB3jsmkeKLFQakCOwCM3AOk7VkldBz4jrzSe+Z0Ezn99NVXa1o45cQY4R6A==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -5590,6 +5661,11 @@ jest@^26.4.0:
     import-local "^3.0.2"
     jest-cli "^26.4.2"
 
+jquery@^3.4.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
+  integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -5925,7 +6001,7 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.3.0, lodash@~4.17.10, lodash@~4.17.19:
+lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.3.0, lodash@~4.17.10, lodash@~4.17.19:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -6124,6 +6200,11 @@ modify-code@^1.2.0:
   integrity sha512-5j/jvLnY5hPIGAm8JDb9qGr+UKd88R0pD8KQWqn0aABKZGbslk+PHMeZMy0gSpNTU8lQlMnFWe5kNiar8VOk3w==
   dependencies:
     source-map "^0.7.3"
+
+moment@^2.24.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
 
 ms@2.0.0:
   version "2.0.0"
@@ -6768,6 +6849,11 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
+
+popper.js@^1.16.0:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

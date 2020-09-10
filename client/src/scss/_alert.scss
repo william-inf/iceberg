@@ -1,0 +1,11 @@
+.alert {
+  &.alert-warning {
+    color: #fff;
+    background-color: $yellow;
+  }
+
+  &.alert-danger {
+    color: #fff;
+    background-color: $red;
+  }
+}

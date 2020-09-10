@@ -1,0 +1,185 @@
+$dark-shadow: #050618;
+$modal-background: #fff;
+$modal-footer: #191b1d;
+$border-radius: 3px;
+$white: #fff;
+$gray-200: #d3d3d3;
+$gray-100: #f8f9fa;
+$charcoal: #32383e;
+$title: $gray-800;
+ux-dialog-container,
+ux-dialog-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+ux-dialog-overlay {
+    opacity: 0;
+    z-index: 1040 !important;
+}
+
+ux-dialog-overlay.active {
+    opacity: 0.8;
+    background-color: $dark-shadow;
+    ;
+}
+
+ux-dialog-container {
+    display: block;
+    transition: opacity .2s linear;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 1050 !important;
+}
+
+ux-dialog-container.active {
+    opacity: 1;
+}
+
+ux-dialog-container>div {
+    padding: 30px;
+    height: 100%;
+}
+
+ux-dialog-container>div>div {
+    display: block;
+    min-width: 200px;
+    width: fit-content;
+    height: 100%;
+    margin: auto;
+}
+
+ux-dialog-container,
+ux-dialog-container>div,
+ux-dialog-container>div>div {
+    outline: 0;
+}
+
+ux-dialog {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px $dark-shadow;
+    border-radius: $border-radius;
+    min-width: 200px;
+    max-height: 100%;
+    margin: auto;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: $modal-background;
+}
+
+ux-dialog>ux-dialog-header {
+    display: block;
+    flex: 0 0;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    color: $title;
+    .dialog-close {
+        float: right;
+        appearance: none;
+        background: transparent;
+        border: 0;
+        padding: 0 .5rem;
+        margin: -.5rem -.5rem -.5rem 0;
+        color: $charcoal;
+        font-size: 2.8rem;
+        line-height: 1;
+        border-radius: $border-radius;
+        &:focus {
+            outline: 0;
+        }
+        &:hover {
+            background-color: $gray-100;
+        }
+    }
+}
+
+ux-dialog>ux-dialog-body {
+    display: block;
+    flex: 0 1;
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@include media-breakpoint-up(lg) {
+    ux-dialog.wide-dialog {
+        width: 950px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    ux-dialog.medium-dialog {
+        width: 550px;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    ux-dialog {
+        width: 450px;
+    }
+}
+
+@include media-breakpoint-only(md) {
+    ux-dialog.wide-dialog {
+        width: 700px;
+    }
+}
+
+@include media-breakpoint-only(sm) {
+    ux-dialog.wide-dialog {
+        width: 500px;
+    }
+    ux-dialog.medium-dialog {
+        width: 500px;
+    }
+}
+
+ux-dialog>ux-dialog-footer {
+    @extend .clearfix;
+    display: block;
+    flex: 0 0;
+    padding: 1rem;
+    background-color: $modal-footer;
+    text-align: right;
+    // border-bottom-left-radius: $border-radius;
+    // border-bottom-right-radius: $border-radius;
+}
+
+ux-dialog>ux-dialog-footer .btn {
+    min-width: 5rem;
+}
+
+ux-dialog>ux-dialog-footer .btn+.btn {
+    margin-left: 10px;
+}
+
+ux-dialog>ux-dialog-footer button:disabled {
+    cursor: default;
+    opacity: .45;
+}
+
+.ux-dialog-open {
+    overflow: hidden;
+}
+
+.ux-dialog-side ux-dialog {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    justify-content: space-between;
+    ux-dialog-body {
+        flex: 1 1;
+    }
+}

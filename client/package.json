@@ -1,10 +1,10 @@
 {
-  "name": "client",
+  "name": "iceberg-client",
   "description": "",
   "keywords": [],
   "private": true,
   "version": "0.0.1",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
@@ -78,5 +78,19 @@
     "collectCoverageFrom": [
       "src/**/*.js{,x}"
     ]
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "aurelia-animator-css": "^1.0.4",
+    "aurelia-dialog": "^2.0.0",
+    "aurelia-fetch-client": "^1.8.2",
+    "aurelia-getter-throttle": "^1.0.5",
+    "bcx-aurelia-reorderable-repeat": "^1.3.0",
+    "bcx-validation": "^1.1.1",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "popper.js": "^1.16.0"
   }
 }

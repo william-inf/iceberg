@@ -1,0 +1,50 @@
+body {
+    font-family: 'Khula', sans-serif;
+    font-weight: 400;
+    color: $gray-600;
+    font-size: 1rem;
+}
+
+.navbar {
+    padding: 1rem;
+
+    &.navbar-grey {
+        background-color: $gray-900;
+        color: $gray-100;
+
+        a.anim-link {
+            color: $gray-100;
+            font-weight: 600;
+        
+            &.active {
+                color: $pink;
+            }
+
+            &:after {
+                background-color: $gray-100;
+            }
+        
+            &:hover {
+                color: $gray-100;
+            }
+        }
+
+    }
+}
+
+section {
+    &.au-enter-active {
+        -webkit-animation: fadeIn 0.3s;
+        animation: fadeIn 0.3s;
+    }
+    &.au-leave-active {
+        -webkit-animation: fadeOut 0.3s;
+        animation: fadeOut 0.3s;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hide-sm-only {
+        display: none;
+    }
+}

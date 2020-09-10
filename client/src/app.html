@@ -1,6 +1,15 @@
 <template>
   <require from="./app.scss"></require>
-  <div class="app">
-    <h1>${message}</h1>
+  <nav class="navbar fixed-bottom navbar-expand navbar-grey">
+    <div id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link anim-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="wrapper">
+    <router-view swap-order="after"></router-view>
   </div>
 </template>

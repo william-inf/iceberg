@@ -1,0 +1,92 @@
+form {
+    .form-group {
+        label {
+            color: $blue;
+            font-weight: 600;
+            font-size: 0.75rem;
+            &.is-invalid {
+                color: $red;
+                transition: color 1s;
+            }
+            &.au-enter-active {
+                -webkit-animation: fadeInSlide 0.3s;
+                animation: fadeInSlide 0.3s;
+            }
+            &.au-leave-active {
+                -webkit-animation: fadeOutSlide 0.3s;
+                animation: fadeOutSlide 0.3s;
+            }
+        }
+        input[type=text],
+        input[type=password],
+        input[type=search],
+        textarea {
+            &.form-control {
+                // background-color: transparent;
+                border: none;
+                border-radius: 0px;
+                border-bottom: 2px solid $gray-300;
+                outline: none;
+                transition: border-color 500ms;
+                color: $gray-800;
+                font-weight: 400;
+                padding-left: 0;
+                background-color: transparent;
+                
+                &::placeholder {
+                    
+                }
+
+                &.is-invalid {
+                    border-color: $red;
+                }
+            }
+
+            &:focus {
+                border-color: $blue;
+                box-shadow: none;
+                color: $gray-800;
+                font-weight: 400;
+            }
+
+        }
+        .errors {
+            span {
+                margin-left: 12px;
+                &.au-enter-active {
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                }
+                &.au-leave-active {
+                    -webkit-animation: fadeOut 1s;
+                    animation: fadeOut 1s;
+                }
+            }
+        }
+        .input-group {
+            .input-group-text {
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+                border-bottom: 2px solid $gray-300;
+                transition: border-color 1s;
+            }
+            .btn {
+                border: none;
+            }
+        }
+    }
+}
+
+.note-editor.note-frame, .note-editor.note-airframe {
+    border: 0;
+    background-color: transparent;
+}
+
+.note-editor.note-frame .note-editing-area .note-editable, .note-editor.note-airframe .note-editing-area .note-editable {
+    border: 1px solid $gray-300;
+}
+
+.note-toolbar {
+    padding: 0 0 5px 0;
+}

@@ -1,0 +1,45 @@
+$charcoal: #2b2d33;
+$blue:    #323fff; // #008cff
+$pink:    #ff0386;
+$red:     #d82447;
+$orange:  #ff7954;
+$yellow:  #fc0;
+$green:   #00b17f;
+$cyan:    #009dfc;
+$brown:   #494454;
+
+$white:  #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$gray-1000: #101215;
+$black:  #000;
+$shadow: transparentize($black, .95);
+$dark-shadow: transparentize($black, .7);
+$bright-shadow: transparentize($white, .7);
+
+$red-light: lighten($red, 35%);
+$cyan-light: lighten($cyan, 38%);
+$yellow-light: lighten($yellow, 35%);
+$blue-light: lighten($blue, 45%);
+$green-light: lighten($green, 45%);
+
+$red-dark: darken($red, 20%);
+$cyan-dark: darken($cyan, 20%);
+$yellow-dark: darken($yellow, 20%);
+$blue-dark: darken($blue, 20%);
+$green-dark: darken($green, 20%);
+
+$background: #090c15;
+$background-light: lighten(#090c15, 5%);
+$background-dark: darken($background, 2%);
+$charcoal-dark: #141517;
+
+$theme-colors: ( "primary": $blue, "danger": $red, "secondary": $charcoal, "success": $green, "info": $cyan, "warning": $yellow, "light": $gray-300, "dark": $gray-900);
+$grid-columns: 24;

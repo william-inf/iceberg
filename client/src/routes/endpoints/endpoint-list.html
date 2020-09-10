@@ -1,0 +1,8 @@
+<template>
+    <div if.bind="!loading">
+        <h4>Entries</h4>
+        <div repeat.for="entry of list">
+            ${entry.urlEntry.name} - ${entry.status}
+        </div>
+    </div>
+</template>

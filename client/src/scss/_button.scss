@@ -1,0 +1,10 @@
+.btn {
+    font-weight: 600;
+}
+
+.btn-primary {
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
