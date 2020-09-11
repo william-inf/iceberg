@@ -1,8 +1,19 @@
 <template>
     <div if.bind="!loading">
-        <h4>Entries</h4>
-        <div repeat.for="entry of list">
-            ${entry.urlEntry.name} - ${entry.status}
+        <div class="box">
+            <div class="partition" repeat.for="entry of list">
+                <div class="title">
+                    <div class="left">
+                        <h5>${entry.urlEntry.name}</h5>
+                    </div>
+                    <div class="right">
+                        <span class="badge badge-success">200 ${entry.status}</span>
+                    </div>
+                </div>
+                <div class="body">
+                    -
+                </div>
+            </div>
         </div>
     </div>
 </template>

@@ -1,0 +1,18 @@
+.box {
+  border: 1px solid $gray-400;
+
+  .partition {
+    padding: 1rem;
+    border-top: 1px solid $gray-400;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    .title {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+}
