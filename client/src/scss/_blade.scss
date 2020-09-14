@@ -1,0 +1,91 @@
+.blade-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+
+  .blade {
+    width: 2.5rem;
+    background-color: $gray-1000;
+    transition: width 200ms ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+
+      .blade-content {
+        .content-title {
+          color: $gray-600;
+        }
+      }
+    }
+
+    &.active {
+      width: 100%;
+      cursor: auto;
+
+      .blade-content {
+        .content-title {
+          color: $gray-600;
+        }
+      }
+    }
+
+    &.blade-main {
+      width: 100%;
+      cursor: auto;
+
+      .blade-content {
+        .content-title {
+          color: $gray-600;
+        }
+      }
+
+      &.active {
+        width: 2.5rem;
+        cursor: pointer;
+
+        .blade-content {
+          .content-title {
+            color: $gray-800;
+          }
+        }
+      }
+    }
+
+    .blade-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 100vh;
+      width: 100%;
+
+      .content-title {
+        color: $gray-800;
+        background-color: $gray-950;
+        writing-mode: tb-rl;
+        width: 2.5rem;
+        padding-right: 0.625rem;
+
+        .title-container {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          height: 100vh;
+
+          .title-container-label {
+            align-self: flex-end;
+            margin-bottom: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .content-body {
+        padding: 1rem;
+        width: 100%;
+      }
+    }
+  }
+}

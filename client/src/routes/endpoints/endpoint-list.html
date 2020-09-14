@@ -1,29 +1,36 @@
 <template>
-    <div if.bind="!loading">
-        <div class="box" repeat.for="entry of list">
-            <div class="title">
-                <div class="left">
-                    <h6>${entry.urlEntry.name}</h6>
-                </div>
-                <div class="right">
-                    <span class="badge badge-success">200 ${entry.status}</span>
-                </div>
-            </div>
-            <div class="sub-title">
-                ${entry.urlEntry.addr}
-            </div>
-            <div class="body">
-                <div class="list">
-                    <div class="list-entry" repeat.for="key of entry.values | objectKeys">
-                        <table class="table">
-                            <tr>
-                                <th>${key}</th>
-                                <td>${entry.values[key]}</td>
-                            </tr>
-                        </table>
+    <div class="blade-container" if.bind="!loading">
+        <div class="blade blade-main ${active == null ? '' : 'active'}" click.delegate="active = null">
+            <div class="blade-content">
+                <div class="content-title">
+                    <div class="title-container">
+                        <div class="title-container-label">
+                            Main blade
+                        </div>
                     </div>
                 </div>
+                <div class="content-body">body text</div>
             </div>
         </div>
+        <template repeat.for="entry of list">
+            <div
+                class="blade ${active == entry.urlEntry.addr ? 'active' : ''}"
+                click.delegate="active = entry.urlEntry.addr"
+                style.bind="calcZIndex($index)"
+            >
+                <div class="blade-content">
+                    <div class="content-title">
+                        <div class="title-container">
+                            <div class="title-container-label">
+                                <i class="fas fa-circle text-success mb-2" if.bind="entry.status == 'OK'" style="font-size: 0.625rem;"></i>
+                                <i class="fas fa-circle text-danger mb-2" if.bind="entry.status != 'OK'" style="font-size: 0.625rem;"></i>
+                                ${entry.urlEntry.name}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">Body text</div>
+                </div>
+            </div>
+        </template>
     </div>
 </template>

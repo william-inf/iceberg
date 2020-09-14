@@ -3,6 +3,8 @@ import { inject } from 'aurelia-framework';
 @inject('Iceberg')
 export class EndpointList {
 
+    active = null;
+
     constructor(iceberg) {
         this.iceberg = iceberg;
         this.loading = true;
@@ -19,6 +21,11 @@ export class EndpointList {
                 this.loading = false;
                 this.list = json;
             })
+    }
+
+    calcZIndex(idx) {
+        let zidx = 1001 + idx;
+        return `z-index: ${zidx}`
     }
 
 }

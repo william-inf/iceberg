@@ -1,7 +1,7 @@
 body {
     font-family: 'Khula', sans-serif;
     font-weight: 400;
-    color: $gray-100;
+    color: $gray-400;
     font-size: 1rem;
     background-color: $gray-1000;
 }
@@ -27,13 +27,20 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    //justify-content: space-between;
+    justify-content: space-between;
     width: 100vw;
     height: 100vh;
 
     .menu {
         width: 20vw;
-        background-color: $gray-900;
+        background-color: $gray-1100;
+        padding: 1rem;
+
+        .menu-item {
+            .item {
+                
+            }
+        }
     }
 
     .content {
