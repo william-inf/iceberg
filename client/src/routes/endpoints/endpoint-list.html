@@ -1,17 +1,27 @@
 <template>
     <div if.bind="!loading">
-        <div class="box">
-            <div class="partition" repeat.for="entry of list">
-                <div class="title">
-                    <div class="left">
-                        <h5>${entry.urlEntry.name}</h5>
-                    </div>
-                    <div class="right">
-                        <span class="badge badge-success">200 ${entry.status}</span>
-                    </div>
+        <div class="box" repeat.for="entry of list">
+            <div class="title">
+                <div class="left">
+                    <h5>${entry.urlEntry.name}</h5>
                 </div>
-                <div class="body">
-                    -
+                <div class="right">
+                    <span class="badge badge-success">200 ${entry.status}</span>
+                </div>
+            </div>
+            <div class="sub-title">
+                ${entry.urlEntry.addr}
+            </div>
+            <div class="body">
+                <div class="list">
+                    <div class="list-entry" repeat.for="key of entry.values | objectKeys">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>${key}</th>
+                                <td>${entry.values[key]}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
