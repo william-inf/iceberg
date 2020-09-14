@@ -1,15 +1,13 @@
 <template>
   <require from="./app.scss"></require>
-  <nav class="navbar fixed-bottom navbar-expand navbar-grey">
-    <div id="navbar">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link anim-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
   <div id="wrapper">
-    <router-view swap-order="after"></router-view>
+    <div class="root-container">
+      <div class="menu">
+        Iceberg
+      </div>
+      <div class="content">
+        <router-view swap-order="after"></router-view>
+      </div>
+    </div>
   </div>
 </template>
