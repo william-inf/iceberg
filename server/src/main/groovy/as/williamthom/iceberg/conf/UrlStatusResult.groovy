@@ -6,6 +6,7 @@ import io.micronaut.http.HttpStatus
 class UrlStatusResult {
     HttpStatus status
     UrlEntry urlEntry
+    String group
     Map body
     Map values
     Date date
@@ -14,6 +15,7 @@ class UrlStatusResult {
         UrlStatusResult urlStatusResult = new UrlStatusResult()
         urlStatusResult.status = response.getStatus()
         urlStatusResult.urlEntry = urlEntry
+        urlStatusResult.group = urlEntry.group
         urlStatusResult.date = new Date()
 
         return urlStatusResult
@@ -23,6 +25,7 @@ class UrlStatusResult {
         UrlStatusResult urlStatusResult = new UrlStatusResult()
         urlStatusResult.status = HttpStatus.INTERNAL_SERVER_ERROR
         urlStatusResult.urlEntry = urlEntry
+        urlStatusResult.group = urlEntry.group
         urlStatusResult.date = new Date()
 
         return urlStatusResult

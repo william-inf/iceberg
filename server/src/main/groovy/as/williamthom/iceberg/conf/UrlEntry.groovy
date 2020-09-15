@@ -6,6 +6,7 @@ class UrlEntry {
     String addr
     String name
     String path
+    String group
     EndpointAuthenticationType type
     UrlResponseConfig response
 

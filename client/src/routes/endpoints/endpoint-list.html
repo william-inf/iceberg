@@ -1,11 +1,12 @@
 <template>
+    <require from="routes/endpoints/group-show"></require>
     <div class="blade-container" if.bind="!loading">
         <div class="blade blade-main ${active == null ? '' : 'active'}" click.delegate="active = null">
             <div class="blade-content">
                 <div class="content-title">
                     <div class="title-container">
                         <div class="title-container-label">
-                            Main blade
+                            main-blade
                         </div>
                     </div>
                 </div>
@@ -14,36 +15,47 @@
                         <div class="content-header-text">Body text</div>
                     </div>
                     <div class="content-text">
-                        <div class="arrow-anim">
-                            <i class="fas fa-long-arrow-alt-right"></i>
+                        <div id="main-blade-content">
+                            <div>
+                                More text
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <template repeat.for="entry of list">
+        <template repeat.for="group of list | groupBy: 'group'">
             <div
-                class="blade ${active == entry.urlEntry.addr ? 'active' : ''}"
-                click.delegate="active = entry.urlEntry.addr"
+                class="blade ${active == group.key ? 'active' : ''}"
                 style.bind="calcZIndex($index)"
             >
                 <div class="blade-content">
-                    <div class="content-title">
+                    <div class="content-title" click.delegate="active = group.key">
                         <div class="title-container">
                             <div class="title-container-label">
-                                <i class="fas fa-circle text-success mb-2" if.bind="entry.status == 'OK'" style="font-size: 0.625rem;"></i>
-                                <i class="fas fa-circle text-danger mb-2" if.bind="entry.status != 'OK'" style="font-size: 0.625rem;"></i>
-                                ${entry.urlEntry.name}
+                                <template repeat.for="entry of group.items">
+                                    <i class="fas fa-circle text-success mb-1" if.bind="entry.status == 'OK'" style="font-size: 0.625rem;"></i>
+                                    <i class="fas fa-circle text-danger mb-1" if.bind="entry.status != 'OK'" style="font-size: 0.625rem;"></i>
+                                </template>
+                                <span class="mt-3">${group.key}</span>
                             </div>
                         </div>
                     </div>
                     <div class="content-body">
                         <div class="content-header">
-                            <div class="content-header-text">Body text</div>
+                            <div class="content-header-text">
+                                ${group.key}
+                                <span class="badge badge-primary">...</span>
+                            </div>
                             <div class="content-header-close" click.delegate="active = null">
                                 <i class="fas fa-window-minimize"></i>
-
                             </div>
+                        </div>
+                        <div class="content-text">
+                            <group-show endpoints.bind="group.items"></group-show>
                         </div>
                     </div>
                 </div>

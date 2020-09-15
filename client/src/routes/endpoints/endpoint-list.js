@@ -1,9 +1,9 @@
-import { inject } from 'aurelia-framework';
+import { inject, bindable } from 'aurelia-framework';
 
 @inject('Iceberg')
 export class EndpointList {
 
-    active = null;
+    // @bindable active = null;
 
     constructor(iceberg) {
         this.iceberg = iceberg;

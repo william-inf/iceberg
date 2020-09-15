@@ -47,8 +47,13 @@ section {
                 color: $gray-700;
 
                 &.active {
-                    color: $gray-600;
+                    color: $blue;
                     cursor: auto;
+
+                    &:hover {
+                        color: $blue;
+                        cursor: default;
+                    }
                 }
 
                 &:hover {
