@@ -32,13 +32,36 @@ section {
     height: 100vh;
 
     .menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         width: 20vw;
+
         background-color: $gray-1100;
         padding: 1rem;
+        font-family: 'Space Mono', sans-serif;
 
-        .menu-item {
+        .menu-list {
             .item {
-                
+                color: $gray-700;
+
+                &.active {
+                    color: $gray-600;
+                    cursor: auto;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: $gray-600;
+                }
+            }
+        }
+
+        .footer {
+            color: $gray-700;
+            i {
+                font-size: 0.5rem;
             }
         }
     }

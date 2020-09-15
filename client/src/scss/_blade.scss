@@ -1,3 +1,6 @@
+$blade-text-dull: $gray-700;
+$blade-text-bright: $gray-600;
+
 .blade-container {
   display: flex;
   flex-direction: row;
@@ -16,7 +19,7 @@
 
       .blade-content {
         .content-title {
-          color: $gray-600;
+          color: $blade-text-bright;
         }
       }
     }
@@ -27,7 +30,7 @@
 
       .blade-content {
         .content-title {
-          color: $gray-600;
+          color: $blade-text-bright;
         }
       }
     }
@@ -38,7 +41,7 @@
 
       .blade-content {
         .content-title {
-          color: $gray-600;
+          color: $blade-text-bright;
         }
       }
 
@@ -48,7 +51,17 @@
 
         .blade-content {
           .content-title {
-            color: $gray-800;
+            color: $blade-text-dull;
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .blade-content {
+          .content-title {
+            color: $blade-text-bright;
           }
         }
       }
@@ -62,7 +75,7 @@
       width: 100%;
 
       .content-title {
-        color: $gray-800;
+        color: $blade-text-dull;
         background-color: $gray-950;
         writing-mode: tb-rl;
         width: 2.5rem;
@@ -83,8 +96,25 @@
       }
 
       .content-body {
-        padding: 1rem;
+        padding: 1rem 2.5rem;
         width: 100%;
+        color: $gray-600;
+
+        .content-header {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          font-family: 'Space Mono', sans-serif;
+          font-weight: 600;
+          font-size: 1.25rem;
+        }
+
+        .content-text {
+          .arrow-anim {
+
+          }
+        }
       }
     }
   }

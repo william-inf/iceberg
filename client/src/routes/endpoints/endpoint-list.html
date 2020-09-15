@@ -9,7 +9,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="content-body">body text</div>
+                <div class="content-body">
+                    <div class="content-header">
+                        <div class="content-header-text">Body text</div>
+                    </div>
+                    <div class="content-text">
+                        <div class="arrow-anim">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <template repeat.for="entry of list">
@@ -28,7 +37,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-body">Body text</div>
+                    <div class="content-body">
+                        <div class="content-header">
+                            <div class="content-header-text">Body text</div>
+                            <div class="content-header-close" click.delegate="active = null">
+                                <i class="fas fa-window-minimize"></i>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </template>
