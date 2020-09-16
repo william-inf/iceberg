@@ -1,0 +1,25 @@
+pre {
+  background-color: $gray-950;
+  color: $white;
+  padding: 1rem;
+}
+
+.string {
+  color: $green;
+}
+
+.number {
+  color: $blue
+}
+
+.boolean {
+  color: $pink;
+}
+
+.null {
+  color: $blue;
+}
+
+.key {
+  color: $blue
+}

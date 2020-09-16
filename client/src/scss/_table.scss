@@ -1,0 +1,12 @@
+.table {
+  &.dark-table {
+    color: $gray-600;
+    margin-left: -0.75rem;
+
+    thead {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: $gray-700;
+    }
+  }
+}

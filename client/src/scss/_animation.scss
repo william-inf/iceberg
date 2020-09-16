@@ -75,29 +75,3 @@ section.fade-in.au-leave-active {
     }
 }
 
-a.anim-link {
-    color: $blue;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-
-    &:after {
-        content: "";
-        position: absolute;
-        left:0;
-        top: 100%;
-        width: 0;
-        height: 2px;
-        background-color: $blue;
-        transition: width .2s ease-in-out;
-    }
-
-    &:hover {
-        color: $blue;
-        text-decoration: none;
-
-        &:after {
-            width: 100%;
-        }
-    }
-}
