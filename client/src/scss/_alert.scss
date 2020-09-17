@@ -2,10 +2,18 @@
   &.alert-warning {
     color: #fff;
     background-color: $yellow;
+    border: 0;
   }
 
   &.alert-danger {
     color: #fff;
     background-color: $red;
+    border: 0;
+  }
+
+  &.alert-success {
+    color: #fff;
+    background-color: $green;
+    border: 0;
   }
 }

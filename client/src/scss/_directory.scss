@@ -1,0 +1,28 @@
+.directory {
+  font-family: 'Space Mono', sans-serif;
+
+  .root {
+    font-weight: bolder;
+    margin-bottom: 0.25rem;
+    .fa-eye {
+      display: none;
+    }
+
+    &:hover {
+      .fa-eye {
+        display: inline;
+      }
+    }
+
+    .child {
+      margin-bottom: 0.25rem;
+      color: $gray-700;
+      font-weight: 400;
+      //margin-left: 1rem;
+    }
+  }
+
+  i {
+    color: $gray-700;
+  }
+}
