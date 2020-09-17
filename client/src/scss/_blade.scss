@@ -8,12 +8,23 @@ $blade-text-bright: $gray-600;
   height: 100vh;
 
   .blade-header {
-    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
     width: 100%;
     background-color: $gray-950;
     border-bottom: 3px solid $gray-1000;
-    color: $gray-700;
-    padding: 0.625rem;
+    color: $gray-600;
+
+    .left {
+      margin-left: 1rem;
+      font-family: 'Space Mono', sans-serif;
+    }
+
+    .right {
+      margin-right: 1rem;
+    }
   }
 
   .blade-body {
@@ -136,6 +147,7 @@ $blade-text-bright: $gray-600;
             font-weight: 600;
             font-size: 1.25rem;
             margin-bottom: 2rem;
+            color: $gray-400;
 
             .content-header-close {
               cursor: pointer;

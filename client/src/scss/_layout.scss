@@ -45,11 +45,11 @@ section {
         .menu-list {
             .item {
                 font-size: 1rem;
-                color: $gray-800;
+                color: $gray-600;
                 margin-bottom: 0.5rem;
 
                 a.anim-link {
-                    color: $gray-800;
+                    color: $gray-600;
                     position: relative;
                     display: inline-block;
                     text-decoration: none;
@@ -80,12 +80,12 @@ section {
                         top: 100%;
                         width: 0;
                         height: 2px;
-                        background-color: $gray-700;
+                        background-color: $gray-400;
                         transition: width .2s ease-in-out;
                     }
 
                     &:hover {
-                        color: $gray-700;
+                        color: $gray-400;
                         text-decoration: none;
                         cursor: pointer;
 
@@ -117,13 +117,17 @@ section {
 }
 
 .text-darker {
-    color: $gray-600;
+    color: $gray-400;
 }
 
 .text-darkest {
-    color: $gray-700;
+    color: $gray-600;
 }
 
 .pointer {
     cursor: pointer;
+}
+
+.bold {
+    font-weight: bolder;
 }

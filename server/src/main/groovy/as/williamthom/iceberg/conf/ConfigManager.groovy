@@ -23,6 +23,10 @@ class ConfigManager {
         return map
     }
 
+    ConfigProperties getConfigProperties() {
+        return _properties
+    }
+
     synchronized void persistConfig() {
 
     }

@@ -23,7 +23,16 @@ export class App {
         nav: true,
         settings : {
           icon: 'fas fa-home'
-        }
+        },
+      },{
+        route: 'configuration',
+        moduleId: './routes/configuration/index',
+        name: 'configuration',
+        title: 'Configuration',
+        nav: true,
+        settings : {
+          icon: 'fas fa-home'
+        },
       }
     ]);
   }

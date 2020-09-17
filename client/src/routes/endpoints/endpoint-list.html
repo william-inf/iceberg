@@ -2,7 +2,13 @@
     <require from="routes/endpoints/group-show"></require>
     <div class="blade-container">
         <div class="blade-header">
-            Search
+            <div class="left">
+                <i class="fas fa-search"></i> Search
+            </div>
+            <div class="right">
+                <i class="fas fa-plus mr-2"></i>
+                <i class="fas fa-sync"></i>
+            </div>
         </div>
         <div class="blade-body" if.bind="!loading">
             <div class="blade blade-main ${active == null ? '' : 'active'}">
@@ -21,15 +27,28 @@
                         <div class="content-text">
                             <div id="main-blade-content">
                                 <div class="header">
-                                    <div class="alert alert-success mt-1 mb-1">0 are ok</div>
-                                    <div class="alert alert-danger mt-1 mb-3">0 are errored</div>
+                                    <div class="alert alert-danger alert-dismissible mt-1 mb-3" if.bind="errored > 0">
+                                        ${errored} are errored.
+                                        <span class="pointer bold" if.bind="showErrored == null" click.delegate="showErrored = true">Show errored.</span>
+                                        <span class="pointer bold" if.bind="showErrored == true" click.delegate="showErrored = null">Hide errored.</span>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="directory">
                                     <h6 class="mb-3">// Monitoring</h6>
-                                    <div class="root pointer" click.delegate="active = group.key" repeat.for="group of list | groupBy: 'group'">
-                                        <i class="fas fa-folder-open"></i> ${group.key} <i class="fas fa-eye"></i>
-                                        <div class="child" repeat.for="item of group.items">
-                                           <span style="font-weight: bolder">|</span> &nbsp;${item.urlEntry.addr}
+                                    <div class="root" repeat.for="group of list | groupBy: 'group'">
+                                        <span class="pointer" click.delegate="opened = true" if.bind="opened == null">
+                                            <i class="fas fa-folder"></i> ${group.key}
+                                        </span>
+                                        <span class="pointer" click.delegate="opened = null" if.bind="opened === true">
+                                            <i class="fas fa-folder-open"></i> ${group.key}
+                                        </span>
+                                        <i class="fas fa-eye pointer" click.delegate="active = group.key"></i>
+                                        <div class="child" repeat.for="item of group.items" if.bind="opened == true || showErrored == true">
+                                           <span style="font-weight: bolder">|</span>
+                                            <span class="${showErrored && item.status != 'OK' ? 'text-danger' : ''}">${item.urlEntry.addr}</span>
                                         </div>
                                     </div>
                                     <span class="text-darkest">...</span>
@@ -53,11 +72,11 @@
                         <div class="content-title" click.delegate="active = group.key">
                             <div class="title-container">
                                 <div class="title-container-label">
+                                    <span class="mb-3">${group.key}</span>
                                     <template repeat.for="entry of group.items">
                                         <i class="fas fa-circle text-success mb-1" if.bind="entry.status == 'OK'" style="font-size: 0.625rem;"></i>
                                         <i class="fas fa-circle text-danger mb-1" if.bind="entry.status != 'OK'" style="font-size: 0.625rem;"></i>
                                     </template>
-                                    <span class="mt-3">${group.key}</span>
                                 </div>
                             </div>
                         </div>

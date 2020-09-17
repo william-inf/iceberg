@@ -28,4 +28,14 @@ export class EndpointList {
         return `z-index: ${zidx}`
     }
 
+    get errored() {
+        if (!this.list) return 0
+        return this.list.filter(x => x.status != 'OK').length
+    }
+
+    get ok() {
+        if (!this.list) return 0
+        return this.list.filter(x => x.status === 'OK').length
+    }
+
 }

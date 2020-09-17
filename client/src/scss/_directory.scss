@@ -1,11 +1,17 @@
 .directory {
   font-family: 'Space Mono', sans-serif;
+  color: $gray-400;
 
   .root {
     font-weight: bolder;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+
     .fa-eye {
       display: none;
+    }
+
+    .fa-folder-open {
+      color: $gray-600;
     }
 
     &:hover {
@@ -15,14 +21,28 @@
     }
 
     .child {
-      margin-bottom: 0.25rem;
-      color: $gray-700;
+      color: $gray-600;
       font-weight: 400;
+      transition: color 500ms ease-in-out;
       //margin-left: 1rem;
+
+      &:first-child {
+        margin-top:0.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0.5rem;
+      }
+
     }
   }
 
   i {
     color: $gray-700;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $gray-600;
+    }
   }
 }
