@@ -30,6 +30,11 @@ Follow the below format and include the addresses you would like to probe.
 }
 ```
 
+## Todo
+
+- Add supporting URLs to groups
+- Build config from web portal
+
 ## Build
 
 To assemble to JAR file
