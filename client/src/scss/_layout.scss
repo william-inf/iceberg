@@ -1,9 +1,9 @@
 body {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    color: $gray-400;
+    color: $main-text;
     font-size: 1rem;
-    background-color: $gray-1000;
+    background-color: $body-bg;
 }
 
 section {
@@ -38,18 +38,34 @@ section {
         justify-content: space-between;
         width: 20vw;
 
-        background-color: $gray-1100;
+        background-color: $body-bg;
         padding: 1rem;
         font-family: 'Space Mono', sans-serif;
+
+        .ico-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            .side {
+                cursor: pointer;
+                color: $sub-text;
+
+                &:hover {
+                    color: $main-text;
+                }
+            }
+        }
 
         .menu-list {
             .item {
                 font-size: 1rem;
-                color: $gray-600;
+                color: $sub-text;
                 margin-bottom: 0.5rem;
 
                 a.anim-link {
-                    color: $gray-600;
+                    color: $sub-text;
                     position: relative;
                     display: inline-block;
                     text-decoration: none;
@@ -80,12 +96,12 @@ section {
                         top: 100%;
                         width: 0;
                         height: 2px;
-                        background-color: $gray-400;
+                        background-color: $main-text;
                         transition: width .2s ease-in-out;
                     }
 
                     &:hover {
-                        color: $gray-400;
+                        color: $main-text;
                         text-decoration: none;
                         cursor: pointer;
 
@@ -99,7 +115,7 @@ section {
         }
 
         .footer {
-            color: $gray-700;
+            color: $muted-text;
             i {
                 font-size: 0.5rem;
             }
@@ -108,20 +124,26 @@ section {
 
     .content {
         width: 80vw;
-        background-color: $gray-1000;
+        background-color: $container-bg;
+    }
+
+    @media (max-width: 991px) {
+        .menu {
+            display: none;
+        }
+
+        .content {
+            width: 100vw;
+        }
     }
 }
 
-.text-light {
-    color: $gray-400;
-}
-
 .text-darker {
-    color: $gray-400;
+    color: $main-text;
 }
 
 .text-darkest {
-    color: $gray-600;
+    color: $sub-text;
 }
 
 .pointer {

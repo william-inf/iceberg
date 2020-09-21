@@ -46,3 +46,36 @@ $charcoal-dark: #141517;
 
 $theme-colors: ( "primary": $blue, "danger": $red, "secondary": $charcoal, "success": $green, "info": $cyan, "warning": $yellow, "light": $gray-300, "dark": $gray-900);
 $grid-columns: 24;
+
+
+$main-text: $gray-400;
+$sub-text: $gray-600;
+$muted-text: $gray-700;
+
+$body-bg: $gray-1100;
+$container-bg: $gray-1000;
+
+$blade-bg: $gray-950;
+$blade-container-bg: $gray-1000;
+
+$blade-text-dull: $gray-700;
+$blade-text-bright: $gray-600;
+
+$blade-arrow-start: $gray-600;
+$blade-arrow-finish: $gray-1000;
+
+//$main-text: $gray-950;
+//$sub-text: $gray-700;
+//$muted-text: $gray-600;
+//
+//$body-bg: $white;
+//$container-bg: $gray-100;
+//
+//$blade-bg: darken($gray-100, 3%);
+//$blade-container-bg: $gray-100;
+//
+//$blade-text-dull: $gray-600;
+//$blade-text-bright: $gray-800;
+//
+//$blade-arrow-start: $gray-600;
+//$blade-arrow-finish: $blade-container-bg;

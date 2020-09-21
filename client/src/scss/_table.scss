@@ -1,18 +1,16 @@
 .table {
   &.dark-table {
-    color: $gray-400;
+    color: $main-text;
     margin-left: -0.75rem;
 
     thead {
       font-size: 0.75rem;
       text-transform: uppercase;
-      color: $gray-600;
+      color: $sub-text;
     }
 
     .spin-icon-anim:hover {
       animation: spin 250ms ease-in-out;
     }
   }
-
-
 }
