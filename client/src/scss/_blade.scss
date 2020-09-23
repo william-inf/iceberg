@@ -2,27 +2,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  height: 100vh;
-
-  .blade-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4rem;
-    width: 100%;
-    background-color: $blade-bg;
-    border-bottom: 3px solid $container-bg;
-    color: $sub-text;
-
-    .left {
-      margin-left: 1rem;
-      font-family: 'Space Mono', sans-serif;
-    }
-
-    .right {
-      margin-right: 1rem;
-    }
-  }
+  height: calc(100vh - 3rem - 6px);
 
   .blade-body {
     display: flex;
@@ -32,7 +12,7 @@
 
     .blade {
       width: 2.5rem;
-      background-color: $blade-container-bg;
+      background-color: var(--blade-container-bg);
       transition: width 200ms ease-in-out;
       white-space: nowrap;
       overflow: hidden;
@@ -42,7 +22,7 @@
 
         .blade-content {
           .content-title {
-            color: $blade-text-bright;
+            color: var(--blade-text-bright);
           }
         }
       }
@@ -53,7 +33,7 @@
 
         .blade-content {
           .content-title {
-            color: $blade-text-bright;
+            color: var(--blade-text-bright);
           }
         }
 
@@ -65,7 +45,7 @@
 
         .blade-content {
           .content-title {
-            color: $blade-text-bright;
+            color: var(--blade-text-bright);
           }
         }
 
@@ -75,7 +55,7 @@
 
           .blade-content {
             .content-title {
-              color: $blade-text-dull;
+              color: var(--blade-text-dull);
             }
           }
 
@@ -89,7 +69,7 @@
 
           .blade-content {
             .content-title {
-              color: $blade-text-bright;
+              color: var(--blade-text-bright);
             }
           }
         }
@@ -106,8 +86,8 @@
           display: flex;
           align-items: center;
 
-          color: $blade-text-dull;
-          background-color: $blade-bg;
+          color: var(--blade-text-dull);
+          background-color: var(--blade-bg);
           writing-mode: tb-rl;
           width: 2.5rem;
           padding: 0 0.25rem;
@@ -129,17 +109,17 @@
         }
 
         .content-body {
-          padding: 1rem 2.5rem;
+          padding: 2rem;
           width: 100%;
-          color: $sub-text;
+          color: var(--sub-text);
           overflow-y: scroll;
           overflow-x: scroll;
 
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-          &::-webkit-scrollbar {
-            display: none;
-          }
+          //-ms-overflow-style: none;
+          //scrollbar-width: none;
+          //&::-webkit-scrollbar {
+          //  display: none;
+          //}
 
           .content-header {
             display: flex;
@@ -150,7 +130,7 @@
             font-weight: 600;
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            color: $main-text;
+            color: var(--main-text);
 
             .content-header-close {
               cursor: pointer;
@@ -172,12 +152,12 @@
           @keyframes jiggle {
             from, to {
               margin-right: 0;
-              color: $blade-arrow-start;
+              color: var(--blade-arrow-start);
               animation-timing-function: ease-out;
             }
             50% {
               margin-right: 10rem;
-              color: $blade-arrow-finish;
+              color: var(--blade-arrow-finish);
               animation-timing-function: ease-in;
             }
           }

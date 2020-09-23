@@ -3,6 +3,8 @@ import { inject } from 'aurelia-framework';
 @inject('Iceberg')
 export class App {
 
+  hide = true;
+
   constructor(iceberg) {
     this.iceberg = iceberg;
   }

@@ -1,15 +1,6 @@
 <template>
     <require from="routes/endpoints/group-show"></require>
     <div class="blade-container">
-        <div class="blade-header">
-            <div class="left">
-                <i class="fas fa-search"></i> Search
-            </div>
-            <div class="right">
-                <i class="fas fa-plus mr-2"></i>
-                <i class="fas fa-sync"></i>
-            </div>
-        </div>
         <div class="blade-body" if.bind="!loading">
             <div class="blade blade-main ${active == null ? '' : 'active'}">
                 <div class="blade-content">
@@ -27,17 +18,16 @@
                         <div class="content-text">
                             <div id="main-blade-content">
                                 <div class="header">
-                                    <div class="alert alert-danger alert-dismissible mt-1 mb-3" if.bind="errored > 0">
-                                        ${errored} are errored.
-                                        <span class="pointer bold" if.bind="showErrored == null" click.delegate="showErrored = true">Show errored.</span>
-                                        <span class="pointer bold" if.bind="showErrored == true" click.delegate="showErrored = null">Hide errored.</span>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
+                                    Welcome
                                 </div>
                                 <div class="directory">
-                                    <h6 class="mb-3">// Monitoring</h6>
+                                    <h6 class="mb-3">// Monitoring
+                                        <span class="text-danger" if.bind="errored > 0">
+                                            <i class="fas fa-exclamation-triangle text-danger"></i> ${errored} are errored.
+                                            <span class="pointer" if.bind="showErrored == null" click.delegate="showErrored = true">Show errored.</span>
+                                            <span class="pointer" if.bind="showErrored == true" click.delegate="showErrored = null">Hide errored.</span>
+                                        </span>
+                                    </h6>
                                     <div class="root" repeat.for="group of list | groupBy: 'group'">
                                         <span class="pointer" click.delegate="opened = true" if.bind="opened == null">
                                             <i class="fas fa-folder"></i> ${group.key}

@@ -1,6 +1,6 @@
 .directory {
   font-family: 'Space Mono', sans-serif;
-  color: $main-text;
+  color: var(--main-text);
 
   .root {
     font-weight: bolder;
@@ -11,7 +11,7 @@
     }
 
     .fa-folder-open {
-      color: $sub-text;
+      color: var(--sub-text);
     }
 
     &:hover {
@@ -21,7 +21,7 @@
     }
 
     .child {
-      color: $sub-text;
+      color: var(--sub-text);
       font-weight: 400;
       transition: color 500ms ease-in-out;
       //margin-left: 1rem;
@@ -38,11 +38,11 @@
   }
 
   i {
-    color: $muted-text;
+    color: var(--muted-text);
     transition: color 200ms ease-in-out;
 
     &:hover {
-      color: $sub-text;
+      color: var(--sub-text);
     }
   }
 }

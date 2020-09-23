@@ -1,27 +1,28 @@
 <template>
   <require from="./app.scss"></require>
-  <div id="wrapper">
-    <div class="root-container">
-      <div class="menu">
-        <div class="ico-container">
-          <div class="ico">
-            <h5>༼つ ◕_◕ ༽つ</h5>
-            <h4>Iceberg</h4>
-          </div>
-          <div class="side">
-            <i class="fas fa-align-right"></i>
-          </div>
-        </div>
-        <div class="menu-list">
-          <div class="item">> <a class="anim-link">Home</a></div>
-          <div class="item" href="/">> <a class="anim-link active">Status</a></div>
-          <div class="item" href="/configuration">> <a class="anim-link">Configuration</a></div>
-        </div>
-        <div class="footer">
-          <small>API Status: online <i class="fas fa-circle text-success"></i></small>
-        </div>
-
+  <div id="wrapper" class="${lite ? 'lite' : ''}">
+    <nav class="navbar">
+      <div class="left-col">
+        <i class="fas fa-align-right"></i>
       </div>
+      <div class="center-col">
+        <div class="brand">
+          Iceberg
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="ico">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="ico" click.delegate="lite = true" if.bind="lite == null">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="ico" click.delegate="lite = null" if.bind="lite == true">
+          <i class="fas fa-moon "></i>
+        </div>
+      </div>
+    </nav>
+    <div class="root-container ${hide ? 'hide-menu' : ''}">
       <div class="content">
         <router-view swap-order="after"></router-view>
       </div>

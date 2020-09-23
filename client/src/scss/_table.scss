@@ -1,12 +1,12 @@
 .table {
   &.dark-table {
-    color: $main-text;
+    color: var(--main-text);
     margin-left: -0.75rem;
 
     thead {
       font-size: 0.75rem;
       text-transform: uppercase;
-      color: $sub-text;
+      color: var(--sub-text);
     }
 
     .spin-icon-anim:hover {
