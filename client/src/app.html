@@ -3,7 +3,13 @@
   <div id="wrapper" class="${lite ? 'lite' : ''}">
     <nav class="navbar">
       <div class="left-col">
-        <i class="fas fa-align-right"></i>
+        <div class="ico">
+          <i class="fas fa-align-right" if.bind="!opened" click.delegate="opened = true"></i>
+          <i class="fas fa-times" if.bind="opened" click.delegate="opened = null"></i>
+        </div>
+        <div class="current">
+          viewing 'endpoints'
+        </div>
       </div>
       <div class="center-col">
         <div class="brand">
@@ -25,6 +31,37 @@
     <div class="root-container ${hide ? 'hide-menu' : ''}">
       <div class="content">
         <router-view swap-order="after"></router-view>
+      </div>
+    </div>
+    <div class="popup-menu ${opened ? 'open' : ''}">
+      <div class="menu-list ${opened ? 'list-open' : ''}">
+        <div class="left-menu">
+          <h5>༼つ ◕_◕ ༽つ</h5>
+          <h4>Iceberg</h4>
+<!--          <div class="">-->
+<!--            Keyboard Shortcuts:-->
+<!--          </div>-->
+        </div>
+        <div class="right-menu">
+          <div class="item">
+            <a class="anim-link">Home</a>
+            <div>
+              <small>Return to your homepage.</small>
+            </div>
+          </div>
+          <div class="item" href="/">
+            <a class="anim-link active">Status</a>
+            <div>
+              <small>Check active status pages.</small>
+            </div>
+          </div>
+          <div class="item" href="/configuration">
+            <a class="anim-link">Configuration</a>
+            <div>
+              <small>Set up or edit the configuration for the app.</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
