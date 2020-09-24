@@ -30,8 +30,10 @@ class StatusService {
     }
 
     private Supplier<UrlStatusResult> callUrlEntry(final UrlEntry entry) {
-        EndpointHandler endpointHandler = endpointHandlerFactory.forType(entry.type)
+        EndpointHandler endpointHandler = endpointHandlerFactory.forType(entry.authentication.type)
         ResponseHandler responseHandler = responseHandlerFactory.forType(entry.response.type)
+
+        log.info("Calling into ${endpointHandler.getEndpointType().toString()}")
 
         return () -> {
             UrlStatusResult result = endpointHandler.callEndpoint(entry)

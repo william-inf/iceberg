@@ -1,13 +1,13 @@
 package as.williamthom.iceberg.conf
 
-import as.williamthom.iceberg.utils.api.EndpointAuthenticationType
+import as.williamthom.iceberg.utils.api.EndpointAuthentication
 
 class UrlEntry {
     String addr
     String name
     String path
     String group
-    EndpointAuthenticationType type
+    EndpointAuthentication authentication
     UrlResponseConfig response
 
     Map toMap() {
@@ -15,7 +15,7 @@ class UrlEntry {
             addr: addr,
             name: name,
             path: path,
-            type: type
+            type: authentication?.type
         ]
     }
 }

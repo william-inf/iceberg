@@ -1,0 +1,69 @@
+nav {
+    &.navbar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        height: 3rem;
+        padding: 1rem 1rem;
+
+        color: $main-text;
+        background-color: darken($gray-1100, 1%);
+
+        .center-col {
+            .brand {
+                font-family: 'Space Mono', sans-serif;
+                color: $main-text;
+                font-weight: 600;
+            }
+        }
+
+        .left-col {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            z-index: 2002;
+            color: $sub-text;
+
+            .current {
+                padding-left: 2rem;
+                font-size: 0.9rem
+            }
+
+            .fa-times {
+
+                color: $main-text;
+            }
+        }
+
+        .right-col {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            .ico {
+                color: $sub-text;
+
+                &:not(:last-child) {
+                    margin-left: 1rem;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: $main-text;
+                }
+            }
+        }
+
+        .ico {
+            margin-left: 1rem;
+            color: $sub-text;
+
+            &:hover {
+                cursor: pointer;
+                color: $main-text;
+            }
+        }
+    }
+}

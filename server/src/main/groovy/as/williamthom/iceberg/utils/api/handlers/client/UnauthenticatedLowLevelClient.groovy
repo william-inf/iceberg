@@ -22,6 +22,15 @@ class UnauthenticatedLowLevelClient {
 
     Flowable<HttpResponse<Map>> performGet(UrlEntry configuration) {
         HttpRequest<?> request = HttpRequest.GET("${configuration.addr}${configuration.path}".toString())
+
+        if (configuration.authentication?.headers) {
+            configuration.authentication.headers.each {Map<String, String> header ->
+                header.keySet().each {
+                    request.header(it, header[it])
+                }
+            }
+        }
+
         Flowable<HttpResponse<Map>> flowable = httpClient.exchange(request, Argument.of(Map.class), Argument.of(Map.class))
         return flowable as Flowable<HttpResponse<Map>>
     }
