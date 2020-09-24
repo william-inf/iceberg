@@ -2,6 +2,7 @@ body {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     color: var(--main-text);
+    background-color: var(--body-bg);
     font-size: 1rem;
 }
 
@@ -118,6 +119,7 @@ nav {
     -moz-transition: width 0.2s ease, height 0.4s ease;
     -o-transition: width 0.2s ease, height 0.4s ease;
     transition: width 0.2s ease, height 0.4s ease;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -130,73 +132,12 @@ nav {
         opacity: 0;
         color: white;
 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
-
         .right-menu {
-            padding: 5rem;
-            .item {
-                font-size: 1.25rem;
-                color: $sub-text;
-                margin-bottom: 1.25rem;
+            display: none;
+        }
 
-                a.anim-link {
-                    color: $sub-text;
-                    position: relative;
-                    display: inline-block;
-                    text-decoration: none;
-                    transition: color .3s ease-in-out;
-                    margin-bottom: 0.5rem;
-
-                    &.active {
-                        color: $blue;
-                        cursor: auto;
-
-                        &:hover {
-                            color: $blue;
-                            cursor: default;
-                        }
-
-                        &:after {
-                            content: "";
-                            position: absolute;
-                            left: 0;
-                            top: 100%;
-                            width: 100%;
-                            height: 3px;
-                            background-color: $blue;
-                        }
-                    }
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        top: 100%;
-                        width: 0;
-                        height: 3px;
-                        background-color: $main-text;
-                        transition: width .2s ease-in-out;
-                    }
-
-                    &:hover {
-                        color: $main-text;
-                        text-decoration: none;
-                        cursor: pointer;
-
-                        &:after {
-                            width: 100%;
-                        }
-                    }
-                }
-
-                small {
-                    color: $gray-700;
-                }
-            }
+        .left-menu {
+            display: none;
         }
 
         &.list-open {
@@ -210,6 +151,80 @@ nav {
             -moz-transition-delay: 0.34s;
             -o-transition-delay: 0.34s;
             transition-delay: 0.34s;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+
+            .left-menu {
+                display: block;
+            }
+
+            .right-menu {
+                padding: 5rem;
+                display: block;
+                .item {
+                    font-size: 1.25rem;
+                    color: $sub-text;
+                    margin-bottom: 1.25rem;
+
+                    a.anim-link {
+                        color: $sub-text;
+                        position: relative;
+                        display: inline-block;
+                        text-decoration: none;
+                        transition: color .3s ease-in-out;
+                        margin-bottom: 0.5rem;
+
+                        &.active {
+                            color: $blue;
+                            cursor: auto;
+
+                            &:hover {
+                                color: $blue;
+                                cursor: default;
+                            }
+
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                top: 100%;
+                                width: 100%;
+                                height: 3px;
+                                background-color: $blue;
+                            }
+                        }
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 100%;
+                            width: 0;
+                            height: 3px;
+                            background-color: $main-text;
+                            transition: width .2s ease-in-out;
+                        }
+
+                        &:hover {
+                            color: $main-text;
+                            text-decoration: none;
+                            cursor: pointer;
+
+                            &:after {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    small {
+                        color: $gray-700;
+                    }
+                }
+            }
         }
     }
 

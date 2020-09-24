@@ -75,3 +75,6 @@ section.fade-in.au-leave-active {
     }
 }
 
+.spin-icon-anim:hover {
+    animation: spin 250ms ease-in-out;
+}

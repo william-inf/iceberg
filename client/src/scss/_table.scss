@@ -1,7 +1,7 @@
 .table {
+
   &.dark-table {
     color: var(--main-text);
-    margin-left: -0.75rem;
 
     thead {
       font-size: 0.75rem;
@@ -9,8 +9,6 @@
       color: var(--sub-text);
     }
 
-    .spin-icon-anim:hover {
-      animation: spin 250ms ease-in-out;
-    }
   }
 }
+

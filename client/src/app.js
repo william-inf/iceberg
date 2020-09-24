@@ -1,4 +1,4 @@
-import { inject } from 'aurelia-framework';
+import { inject, computedFrom } from 'aurelia-framework';
 
 @inject('Iceberg')
 export class App {
@@ -21,7 +21,8 @@ export class App {
         route: ['', 'home'],
         moduleId: './routes/home/index',
         name: 'home',
-        title: 'Home',
+        title: 'Dashboard',
+        description: 'Check active status pages.',
         nav: true,
         settings : {
           icon: 'fas fa-home'
@@ -31,11 +32,17 @@ export class App {
         moduleId: './routes/configuration/index',
         name: 'configuration',
         title: 'Configuration',
+        description: 'Manage or set up configuration and settings for app.',
         nav: true,
         settings : {
           icon: 'fas fa-home'
         },
       }
     ]);
+  }
+
+  @computedFrom('router', 'router.currentInstruction')
+  get title() {
+    return _.get(this.router, 'currentInstruction.config.title');
   }
 }

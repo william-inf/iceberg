@@ -8,7 +8,7 @@
           <i class="fas fa-times" if.bind="opened" click.delegate="opened = null"></i>
         </div>
         <div class="current">
-          viewing 'endpoints'
+          viewing '${title}'
         </div>
       </div>
       <div class="center-col">
@@ -20,10 +20,10 @@
         <div class="ico">
           <i class="fas fa-search"></i>
         </div>
-        <div class="ico" click.delegate="lite = true" if.bind="lite == null">
+        <div class="ico spin-icon-anim" click.delegate="lite = true" if.bind="lite == null">
           <i class="fas fa-sun"></i>
         </div>
-        <div class="ico" click.delegate="lite = null" if.bind="lite == true">
+        <div class="ico spin-icon-anim" click.delegate="lite = null" if.bind="lite == true">
           <i class="fas fa-moon "></i>
         </div>
       </div>
@@ -43,22 +43,10 @@
 <!--          </div>-->
         </div>
         <div class="right-menu">
-          <div class="item">
-            <a class="anim-link">Home</a>
+          <div class="item" repeat.for="row of router.navigation">
+            <a class="anim-link ${row.isActive ? 'active' : ''}" href.bind="row.href">${row.title}</a>
             <div>
-              <small>Return to your homepage.</small>
-            </div>
-          </div>
-          <div class="item" href="/">
-            <a class="anim-link active">Status</a>
-            <div>
-              <small>Check active status pages.</small>
-            </div>
-          </div>
-          <div class="item" href="/configuration">
-            <a class="anim-link">Configuration</a>
-            <div>
-              <small>Set up or edit the configuration for the app.</small>
+              <small>${row.config.description}</small>
             </div>
           </div>
         </div>
