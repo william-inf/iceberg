@@ -3,9 +3,10 @@
   <div id="wrapper" class="${lite ? 'lite' : ''}">
     <nav class="navbar">
       <div class="left-col">
-        <div class="ico">
-          <i class="fas fa-align-right" if.bind="!opened" click.delegate="opened = true"></i>
-          <i class="fas fa-times" if.bind="opened" click.delegate="opened = null"></i>
+        <div class="button-container ${opened ? 'active' : ''}" id="toggle" click.delegate="opened = (opened ? null : true)">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
         </div>
         <div class="current">
           viewing '${title}'
@@ -33,24 +34,56 @@
         <router-view swap-order="after"></router-view>
       </div>
     </div>
-    <div class="popup-menu ${opened ? 'open' : ''}">
-      <div class="menu-list ${opened ? 'list-open' : ''}">
-        <div class="left-menu">
-          <h5>༼つ ◕_◕ ༽つ</h5>
-          <h4>Iceberg</h4>
-<!--          <div class="">-->
-<!--            Keyboard Shortcuts:-->
-<!--          </div>-->
-        </div>
-        <div class="right-menu">
-          <div class="item" repeat.for="row of router.navigation">
-            <a class="anim-link ${row.isActive ? 'active' : ''}" href.bind="row.href">${row.title}</a>
-            <div>
-              <small>${row.config.description}</small>
+
+      <div class="overlay ${opened ? 'open' : ''}" id="overlay">
+        <div class="overlay-menu">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-24 mb-3">
+                <h6 class="mb-3" style="color: #555">Menu</h6>
+                <ul>
+                  <li repeat.for="row of router.navigation">
+                    <a class="${row.isActive ? 'active' : ''} anim-link" href.bind="row.href">
+                      ${row.title}
+                    </a>
+<!--                    <div>-->
+<!--                      <small>${row.config.description}</small>-->
+<!--                    </div>-->
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12 col-sm-24">
+                <h6 class="mb-3" style="color: #555">Management</h6>
+                <ul>
+                  <li><a href="#">Add Endpoint</a></li>
+                  <li><a href="#">Add Group</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+
+<!--    -->
+<!--    <div class="popup-menu ${opened ? 'open' : ''}">-->
+<!--      <div class="menu-list ${opened ? 'list-open' : ''}">-->
+<!--        <div class="left-menu">-->
+<!--          <h5>༼つ ◕_◕ ༽つ</h5>-->
+<!--          <h4>Iceberg</h4>-->
+<!--&lt;!&ndash;          <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;            Keyboard Shortcuts:&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="right-menu">-->
+<!--          <div class="item" repeat.for="row of router.navigation">-->
+<!--            <a class="anim-link ${row.isActive ? 'active' : ''}" href.bind="row.href">${row.title}</a>-->
+<!--            <div>-->
+<!--              <small>${row.config.description}</small>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
