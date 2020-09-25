@@ -38,3 +38,9 @@ section {
     }
 
 }
+
+.main-container {
+    height: calc(100vh - 3rem - 6px);
+    color: var(--main-text);
+    padding: 2rem;
+}
