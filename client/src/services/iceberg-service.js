@@ -111,4 +111,14 @@ export class IcebergService {
                 });
     }
 
+    getConfiguration() {
+        return this.fetch('/api/settings/config')
+            .then(json => {
+                    return json
+                },
+                error => {
+                    throw error;
+                });
+    }
+
 }

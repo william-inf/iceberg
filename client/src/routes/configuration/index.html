@@ -1,7 +1,10 @@
 <template>
+    <require from="routes/configuration/viewer"></require>
     <div class="main-container">
         <div class="row">
-            <div class="col-md-12 col-sm-24">Col 1</div>
+            <div class="col-md-12 col-sm-24">
+                <viewer if.bind="config" config.bind="config"></viewer>
+            </div>
             <div class="col-md-12 col-sm-24">Col 2</div>
         </div>
     </div>

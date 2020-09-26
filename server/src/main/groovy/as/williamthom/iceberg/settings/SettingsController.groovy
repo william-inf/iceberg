@@ -5,6 +5,8 @@ import as.williamthom.iceberg.conf.ConfigProperties
 import groovy.util.logging.Slf4j
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
+import io.micronaut.http.annotation.Patch
+import io.micronaut.http.annotation.Post
 
 import javax.inject.Inject
 
@@ -20,4 +22,8 @@ class SettingsController {
         return configManager.getConfigProperties()
     }
 
+    @Patch("/config")
+    def updateConfig() {
+
+    }
 }

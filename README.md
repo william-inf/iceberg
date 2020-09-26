@@ -26,7 +26,13 @@ Follow the below format and include the addresses you would like to probe.
 				"label": "Version"
 			}, ...]
 		}
-	}, ...]
+	} ... ],
+    "settings" : {
+        <app settings>
+    },
+    "groups" : [{
+        ...
+    }]
 }
 ```
 
