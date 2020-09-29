@@ -5,21 +5,21 @@ class ConfigProperties {
     List<Group> groups = []
 
     void saveGroup(Group g) {
-        removeGroup(g)
+        removeGroup(g.name)
         this.groups.add(g)
     }
 
     void saveUrlEntry(UrlEntry u) {
-        removeUrlEntry(u)
+        removeUrlEntry(u.name)
         this.urls.add(u)
     }
 
-    void removeGroup(Group g) {
-        this.groups.removeIf { it.name == g.name }
+    void removeGroup(String name) {
+        this.groups.removeIf { it.name == name }
     }
 
-    void removeUrlEntry(UrlEntry u) {
-        this.urls.removeIf {it.name == u.name }
+    void removeUrlEntry(String name) {
+        this.urls.removeIf {it.name == name }
     }
 
 

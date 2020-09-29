@@ -31,8 +31,16 @@ class ConfigManager {
         _properties.saveGroup(group)
     }
 
+    synchronized void deleteGroup(String name) {
+        _properties.removeGroup(name)
+    }
+
     synchronized void saveUrlEntry(UrlEntry urlEntry) {
         _properties.saveUrlEntry(urlEntry)
+    }
+
+    synchronized void deleteUrlEntry(String name) {
+        _properties.removeUrlEntry(name)
     }
 
     private synchronized void persistConfig() {

@@ -21,4 +21,8 @@ final class SettingsService {
     void saveGroup(Group group) {
         configManager.saveGroup(group)
     }
+
+    void deleteGroup(String name) {
+        configManager.deleteGroup(name)
+    }
 }

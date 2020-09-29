@@ -18,10 +18,4 @@ abstract class APIController {
         return ErrorResponse.asBadRequest(ofve.message, ofve.errors)
     }
 
-    @Produces(MediaType.TEXT_JSON)
-    @Error(status = HttpStatus.NOT_FOUND)
-    ErrorResponse onNotFound(HttpRequest request) {
-        return ErrorResponse.asNotFound("Path [${request.path}] not found", [path: request.path])
-    }
-
 }
