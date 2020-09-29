@@ -1,6 +1,6 @@
 package as.williamthom.iceberg.endpoints
 
-import as.williamthom.iceberg.conf.ConfigManager
+import as.williamthom.iceberg.common.APIController
 import as.williamthom.iceberg.conf.UrlEntry
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
@@ -14,8 +14,8 @@ import javax.inject.Inject
 
 @Slf4j
 @CompileStatic
-@Controller("/endpoint")
-class EndpointController {
+@Controller("/api/endpoint")
+class EndpointController extends APIController {
 
     @Inject EndpointService endpointService
 

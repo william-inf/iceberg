@@ -43,4 +43,18 @@ section {
     height: calc(100vh - 3rem - 6px);
     color: var(--main-text);
     padding: 2rem;
+
+    .full-col {
+        height: 90vh;
+        color: var(--sub-text);
+        overflow-y: scroll;
+        overflow-x: scroll;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 }

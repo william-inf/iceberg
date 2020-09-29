@@ -27,8 +27,19 @@ class ConfigManager {
         return _properties
     }
 
-    synchronized void persistConfig() {
+    synchronized void saveGroup(Group group) {
+        _properties.saveGroup(group)
+    }
+
+    synchronized void saveUrlEntry(UrlEntry urlEntry) {
+        _properties.saveUrlEntry(urlEntry)
+    }
+
+    private synchronized void persistConfig() {
+        // Save to file system
 
     }
+
+
 
 }
