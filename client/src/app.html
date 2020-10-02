@@ -1,6 +1,6 @@
 <template>
   <require from="./app.scss"></require>
-  <div id="wrapper" class="${lite ? 'lite' : ''}">
+  <div id="wrapper">
     <nav class="navbar">
       <div class="left-col">
         <div class="button-container ${opened ? 'active' : ''}" id="toggle" click.delegate="opened = (opened ? null : true)">
@@ -21,15 +21,15 @@
         <div class="ico">
           <i class="fas fa-search"></i>
         </div>
-        <div class="ico spin-icon-anim" click.delegate="lite = true" if.bind="lite == null">
+        <div class="ico spin-icon-anim" click.delegate="toggleLightMode()" if.bind="lite == null">
           <i class="fas fa-sun"></i>
         </div>
-        <div class="ico spin-icon-anim" click.delegate="lite = null" if.bind="lite == true">
+        <div class="ico spin-icon-anim" click.delegate="toggleLightMode()" if.bind="lite == true">
           <i class="fas fa-moon "></i>
         </div>
       </div>
     </nav>
-    <div class="root-container ${hide ? 'hide-menu' : ''}">
+    <div class="root-container">
       <div class="content">
         <router-view swap-order="after"></router-view>
       </div>
@@ -43,7 +43,7 @@
                 <h6 class="mb-3" style="color: #555">Menu</h6>
                 <ul>
                   <li repeat.for="row of router.navigation">
-                    <a class="${row.isActive ? 'active' : ''} anim-link" href.bind="row.href">
+                    <a class="${row.isActive ? 'active' : ''} anim-link" click.delegate="navigateMenu(row.href)">
                       ${row.title}
                     </a>
 <!--                    <div>-->

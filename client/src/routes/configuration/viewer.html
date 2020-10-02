@@ -1,3 +1,6 @@
 <template>
-    <pre if.bind="config" innerhtml.bind="config | jsonFormatter"></pre>
+    <div class="accordian" if.bind="config">
+        <parent struct.bind="config" key.bind="key"></parent>
+    </div>
 </template>
+

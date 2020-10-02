@@ -1,6 +1,28 @@
 <template>
     <require from="routes/endpoints/group-show"></require>
     <div class="blade-container">
+        <div class="blade-body" if.bind="loading">
+            <div class="blade blade-main">
+                <div class="blade-content">
+                    <div class="content-title">
+                        <div class="title-container">
+                            <div class="title-container-label">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <div class="content-header">
+                            <div class="content-header-text"></div>
+                        </div>
+                        <div class="content-text">
+                            <div class="text-center">
+                                <i class="fas fa-spinner fa-pulse fa-4x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="blade-body" if.bind="!loading">
             <div class="blade blade-main ${active == null ? '' : 'active'}">
                 <div class="blade-content">

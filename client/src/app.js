@@ -1,12 +1,14 @@
-import { inject, computedFrom } from 'aurelia-framework';
+import { bindable, inject, computedFrom } from 'aurelia-framework';
 
 @inject('Iceberg')
 export class App {
 
-  hide = true;
+  opened = null;
 
   constructor(iceberg) {
     this.iceberg = iceberg;
+    this.lite = true;
+
   }
 
   configureRouter(config, router) {
@@ -39,6 +41,21 @@ export class App {
         },
       }
     ]);
+  }
+
+  navigateMenu(routeHref) {
+    this.opened = null;
+    this.router.navigate(routeHref, {});
+  }
+
+  toggleLightMode() {
+    if (this.lite) {
+      document.body.classList.remove('lite')
+      this.lite = null
+    } else {
+      document.body.classList.add('lite')
+      this.lite = true
+    }
   }
 
   @computedFrom('router', 'router.currentInstruction')

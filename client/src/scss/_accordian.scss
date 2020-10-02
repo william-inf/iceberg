@@ -1,0 +1,26 @@
+.accordian {
+    background-color: var(--blade-bg);
+    border-radius: 3px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+
+    .key {
+        padding-left: 1rem;
+        .title {
+            font-weight: bold;
+            color: $blue;
+        }
+
+        .values {
+            margin-left: 1rem;
+            .label {
+                font-weight: bold;
+                color: $green;
+            }
+            .properties {
+                color: var(--main-text);
+            }
+        }
+    }
+}

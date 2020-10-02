@@ -1,10 +1,11 @@
 body {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
     color: var(--main-text);
     background-color: var(--body-bg);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1rem;
 }
+
 
 section {
     &.au-enter-active {
@@ -29,8 +30,8 @@ section {
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 100vw;
-    border-top: 3px solid var(--blade-bg);
-    border-bottom: 3px solid var(--blade-bg);
+    border-top: 3px solid var(--body-bg);
+    border-bottom: 3px solid var(--body-bg);
 
     .content {
         width: 100vw;
@@ -40,12 +41,11 @@ section {
 }
 
 .main-container {
-    height: calc(100vh - 3rem - 6px);
     color: var(--main-text);
-    padding: 2rem;
+    margin: 2.5rem;
+    height: 100vh;
 
     .full-col {
-        height: 90vh;
         color: var(--sub-text);
         overflow-y: scroll;
         overflow-x: scroll;
