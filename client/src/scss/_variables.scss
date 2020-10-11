@@ -47,7 +47,7 @@ $charcoal-dark: #141517;
 $theme-colors: ( "primary": $blue, "danger": $red, "secondary": $charcoal, "success": $green, "info": $cyan, "warning": $yellow, "light": $gray-300, "dark": $gray-900);
 $grid-columns: 24;
 
-$main-text: $gray-400;
+$main-text: $gray-100;
 $sub-text: $gray-600;
 $muted-text: $gray-700;
 $body-bg: $gray-1100;
@@ -59,7 +59,7 @@ $blade-text-bright: $gray-600;
 $blade-arrow-start: $gray-600;
 $blade-arrow-finish: $gray-1000;
 
-$main-text-lite: $gray-950;
+$main-text-lite: $gray-1000;
 $sub-text-lite: $gray-700;
 $muted-text-lite: $gray-600;
 $body-bg-lite: $white;
@@ -70,7 +70,6 @@ $blade-text-dull-lite: $gray-600;
 $blade-text-bright-lite: $gray-800;
 $blade-arrow-start-lite: $blade-container-bg;
 $blade-arrow-finish-lite: $gray-600;
-
 
 :root {
   --color-page-background: #{$body-bg};
