@@ -37,9 +37,7 @@ class StatusService {
 
         return () -> {
             UrlStatusResult result = endpointHandler.callEndpoint(entry)
-            Map values = responseHandler.handleResponse(result.urlEntry.response, result.body)
-
-            result.withValues(values)
+                    .extractResponse(responseHandler)
 
             return result
         }

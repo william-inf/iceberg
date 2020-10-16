@@ -9,20 +9,14 @@ import javax.inject.Singleton
 
 @Slf4j
 @Singleton
-class JSONResponseHandler implements ResponseHandler {
+class PresenceResponseHandler implements ResponseHandler {
 
     Map handleResponse(final UrlStatusResult result) {
-        Map body = result.body
-        Map extracted = result.urlEntry.response.values.collectEntries {
-            [(it.label): body.get(it.key, "<Missing>")]
-        }
-
-        return extracted
+        return [status: result.status]
     }
 
     @Override
     ResponseType getResponseType() {
-        return ResponseType.JSON
+        return ResponseType.Presence
     }
-
 }

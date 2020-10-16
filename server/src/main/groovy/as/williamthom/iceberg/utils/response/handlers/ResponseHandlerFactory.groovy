@@ -14,6 +14,7 @@ class ResponseHandlerFactory {
 
     static {
         registerHandler(ResponseType.JSON, JSONResponseHandler)
+        registerHandler(ResponseType.Presence, PresenceResponseHandler)
     }
 
     private static void registerHandler(ResponseType type, Class<? extends ResponseHandler> bean) {

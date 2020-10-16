@@ -9,13 +9,4 @@ class UrlEntry {
     String group
     EndpointAuthentication authentication
     UrlResponseConfig response
-
-    Map toMap() {
-        return [
-            addr: addr,
-            name: name,
-            path: path,
-            type: authentication?.type
-        ]
-    }
 }

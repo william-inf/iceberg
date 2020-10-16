@@ -1,5 +1,6 @@
 package as.williamthom.iceberg.conf
 
+import as.williamthom.iceberg.utils.response.handlers.ResponseHandler
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
 
@@ -38,6 +39,12 @@ class UrlStatusResult {
 
     UrlStatusResult withValues(Map values) {
         this.values = values
+        return this
+    }
+
+    UrlStatusResult extractResponse(ResponseHandler handler)  {
+        this.values = handler.handleResponse(this)
+
         return this
     }
 }
