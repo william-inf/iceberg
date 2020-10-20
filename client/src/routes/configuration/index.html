@@ -7,7 +7,11 @@
                     <viewer if.bind="config" config.bind="config"></viewer>
                 </div>
             </div>
-            <div class="col-md-12 col-sm-24">Col 2</div>
+            <div class="col-md-12 col-sm-24">
+                <div class="text-right">
+                    <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
+                </div>
+            </div>
         </div>
     </section>
 </template>

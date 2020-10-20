@@ -1,0 +1,71 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-header>
+      <h4>Add Endpoint</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <div class="alert alert-danger" if.bind="errorMessage">
+        ${errorMessage}
+      </div>
+      <form>
+        <div>
+          <div class="mt-3 mb-2">
+            <strong>Entry Details</strong>
+          </div>
+          <validatable-field
+              placeholder="https://www.testsite.com"
+              value.bind="model.addr"
+              errors.bind="errors.addr"
+              label="Address"
+              type="text">
+          </validatable-field>
+          <validatable-field
+              placeholder="/ext"
+              value.bind="model.path"
+              errors.bind="errors.path"
+              label="Path"
+              type="text">
+          </validatable-field>
+          <validatable-field
+              placeholder="name"
+              value.bind="model.name"
+              errors.bind="errors.name"
+              label="Name"
+              type="text">
+          </validatable-field>
+          <validatable-field
+              placeholder="group"
+              value.bind="model.group"
+              errors.bind="errors.group"
+              label="Group"
+              type="text">
+          </validatable-field>
+          <div class="mt-3 mb-2">
+            <strong>Additional Properties</strong>
+          </div>
+          <validatable-select
+              value.bind="model.authentication.type"
+              errors.bind="errors.authentication.type"
+              label="Authentication"
+              option-key="name"
+              option-value="label"
+              values.bind="authenticationTypes">
+          </validatable-select>
+          <validatable-select
+              value.bind="model.response.type"
+              errors.bind="errors.response.type"
+              label="Response Type"
+              option-key="name"
+              option-value="label"
+              values.bind="responseTypes">
+          </validatable-select>
+
+        </div>
+      </form>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button click.trigger="controller.cancel()" class="btn btn-default">Cancel</button>
+      <button click.trigger="submit()" class="btn btn-secondary ${hasError ? 'disabled' : ''}" value="save">Ok</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

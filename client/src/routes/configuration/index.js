@@ -1,11 +1,15 @@
 import { inject } from 'aurelia-framework';
+import { DialogService } from 'aurelia-dialog';
+import { AddEndpointDialog } from 'routes/dialog/add-endpoint-dialog';
 
-@inject('Iceberg')
+@inject('Iceberg', DialogService)
 export class Index {
 
-    constructor(iceberg) {
+    loading = true;
+
+    constructor(iceberg, dialogService) {
         this.iceberg = iceberg;
-        this.loading = true;
+        this.dialogService = dialogService;
     }
 
     attached() {
@@ -15,10 +19,18 @@ export class Index {
     retrieve() {
         this.iceberg.getConfiguration()
             .then((json) => {
-                console.log(json);
                 this.loading = false;
                 this.config = json;
             })
     }
 
+    addEndpoint() {
+        this.dialogService.open({ viewModel: AddEndpointDialog, model: {}, lock: false })
+            .whenClosed(response => {
+                if (!response.wasCancelled) {
+                    this.loading = true;
+                    this.retrieve();
+                }
+            });
+    }
 }

@@ -3,7 +3,8 @@ export function configure(config) {
       './value-converters/object-keys',
       './value-converters/group-by',
       './value-converters/json-formatter',
-      './elements/parent',
-      './elements/child'
+      './elements/validatable-field',
+      './elements/validatable-select',
+      './elements/parent'
   ]);
 }

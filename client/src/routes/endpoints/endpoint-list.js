@@ -3,8 +3,6 @@ import { inject, bindable } from 'aurelia-framework';
 @inject('Iceberg')
 export class EndpointList {
 
-    // @bindable active = null;
-
     constructor(iceberg) {
         this.iceberg = iceberg;
         this.loading = true;
@@ -17,7 +15,6 @@ export class EndpointList {
     retrieve() {
         this.iceberg.getEndpoints()
             .then((json) => {
-                console.log(json);
                 this.loading = false;
                 this.list = json;
             })

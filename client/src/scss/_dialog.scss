@@ -7,6 +7,7 @@ $gray-200: #d3d3d3;
 $gray-100: #f8f9fa;
 $charcoal: #32383e;
 $title: $gray-800;
+
 ux-dialog-container,
 ux-dialog-overlay {
     position: fixed;
@@ -18,7 +19,7 @@ ux-dialog-overlay {
 
 ux-dialog-overlay {
     opacity: 0;
-    z-index: 1040 !important;
+    z-index: 4040 !important;
 }
 
 ux-dialog-overlay.active {
@@ -33,7 +34,7 @@ ux-dialog-container {
     opacity: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    z-index: 1050 !important;
+    z-index: 4050 !important;
 }
 
 ux-dialog-container.active {

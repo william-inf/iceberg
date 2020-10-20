@@ -3,7 +3,7 @@
     <div class="pointer" click.delegate="expanded ? (expanded = null) : (expanded = true)">
       <span class="pointer" if.bind="!expanded">+</span>
       <span class="pointer" if.bind="expanded">-</span>
-      <span class="title">${key ? key : '(root)'}</span>
+      <span class="title">${key ? key : '(root)'}:</span>
     </div>
     <div class="val-cluster" repeat.for="key of struct | objectKeys" if.bind="expanded">
       <div class="values" if.bind="struct[key] === null || typeof struct[key] !== 'object'">
