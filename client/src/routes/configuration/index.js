@@ -25,7 +25,7 @@ export class Index {
     }
 
     addEndpoint() {
-        this.dialogService.open({ viewModel: AddEndpointDialog, model: {}, lock: false })
+        this.dialogService.open({ viewModel: AddEndpointDialog, model: null, lock: false })
             .whenClosed(response => {
                 if (!response.wasCancelled) {
                     this.loading = true;

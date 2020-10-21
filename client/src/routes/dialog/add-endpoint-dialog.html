@@ -59,7 +59,35 @@
               option-value="label"
               values.bind="responseTypes">
           </validatable-select>
-
+          <div class="additional" if.bind="model.response.type === 'JSON'">
+            <div class="row" repeat.for="entry of model.response.values">
+              <div class="col-2"></div>
+              <div class="col-10">
+                <validatable-field
+                    placeholder="key"
+                    value.bind="entry.key"
+                    label="Key"
+                    type="text">
+                </validatable-field>
+              </div>
+              <div class="col-10">
+                <validatable-field
+                    placeholder="label"
+                    value.bind="entry.label"
+                    label="Label"
+                    type="text">
+                </validatable-field>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-times text-secondary" click.delegate="removeResponseValue($index)"></i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-24 text-center">
+                <button class="btn btn-sm btn-outline-secondary" click.delegate="addResponseValue()"><i class="fa fa-plus"></i> Add Response Value</button>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </ux-dialog-body>
@@ -69,3 +97,4 @@
     </ux-dialog-footer>
   </ux-dialog>
 </template>
+

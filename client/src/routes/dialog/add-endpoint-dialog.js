@@ -1,5 +1,6 @@
 import { DialogController } from 'aurelia-dialog';
 import { inject, computedFrom } from 'aurelia-framework';
+import { watch } from 'aurelia-watch-decorator';
 
 @inject(DialogController, 'Iceberg', 'Validation')
 export class AddEndpointDialog {
@@ -39,7 +40,9 @@ export class AddEndpointDialog {
     }
 
     activate(model) {
-        this.model = model;
+        this.model = (model ? model : this.model);
+        this.authenticationTypes = this.retrieveAuthenticationTypes()
+        this.responseTypes = this.retrieveResponseTypes()
     }
 
     submit() {
@@ -64,7 +67,24 @@ export class AddEndpointDialog {
 
     canDeactivate() {}
 
-    get authenticationTypes() {
+    addResponseValue() {
+        this.model.response.values.push({
+            key: '',
+            label: ''
+        })
+    }
+
+    removeResponseValue(index) {
+        this.model.response.values.splice(index, 1)
+    }
+
+    @watch('model.response.type')
+    responseTypeHandler() {
+        console.log('fired!');
+        this.model.response.values = []
+    }
+
+    retrieveAuthenticationTypes() {
         return [{
             name: '',
             label: 'Please select'
@@ -74,7 +94,7 @@ export class AddEndpointDialog {
         }]
     }
 
-    get responseTypes() {
+    retrieveResponseTypes() {
         return [{
             name: '',
             label: 'Please select'

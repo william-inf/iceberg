@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
         <label>${label}</label>
-        <select if.bind="optionKey" class="form-control" value.bind="value.id">
+        <select if.bind="optionKey" class="form-control" value.bind="value">
             <option repeat.for="data of values" model.bind="data[optionKey]">${data[optionValue]}</option>
         </select>
         <select if.bind="!optionKey" class="form-control" value.bind="value">
