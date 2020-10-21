@@ -24,13 +24,7 @@ class DataLoader implements ApplicationEventListener<ServerStartupEvent>{
     @Override
     void onApplicationEvent(ServerStartupEvent event) {
         log.info("Loading config on start up event!")
-        File configFile = new File(CONF_FILE_LOCATION)
-        if (!configFile.exists()) {
-            throw new RuntimeException("Missing config file at location - ${CONF_FILE_LOCATION}")
-        }
-
-        ConfigProperties conf = JSONUtils.fromJson(configFile.text, ConfigProperties)
-        configManager.initialize(conf)
+        configManager.initialize()
 
         log.info("Config loaded successfully.")
     }

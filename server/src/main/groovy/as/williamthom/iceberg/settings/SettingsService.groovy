@@ -3,6 +3,7 @@ package as.williamthom.iceberg.settings
 import as.williamthom.iceberg.conf.ConfigManager
 import as.williamthom.iceberg.conf.ConfigProperties
 import as.williamthom.iceberg.conf.Group
+import as.williamthom.iceberg.conf.UrlEntry
 import groovy.util.logging.Slf4j
 
 import javax.inject.Inject
@@ -18,11 +19,11 @@ final class SettingsService {
         return configManager.getConfigProperties()
     }
 
-    void saveGroup(Group group) {
-        configManager.saveGroup(group)
+    void saveUrlEntry(UrlEntry urlEntry) {
+        configManager.saveUrlEntry(urlEntry)
     }
 
-    void deleteGroup(String name) {
-        configManager.deleteGroup(name)
+    void deleteUrlEntry(String name) {
+        configManager.deleteUrlEntry(name)
     }
 }

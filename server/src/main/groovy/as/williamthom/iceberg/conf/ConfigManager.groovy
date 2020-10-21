@@ -1,15 +1,24 @@
 package as.williamthom.iceberg.conf
 
+import as.williamthom.iceberg.utils.JSONUtils
+
 import javax.inject.Singleton
 import java.util.concurrent.ConcurrentHashMap;
 
 @Singleton
 class ConfigManager {
 
+    static final String CONF_FILE_LOCATION = "/opt/iceberg/iceberg_config.conf"
+
     synchronized private ConfigProperties _properties
 
-    void initialize(ConfigProperties properties) {
-        _properties = properties
+    void initialize() {
+        File configFile = new File(CONF_FILE_LOCATION)
+        if (!configFile.exists()) {
+            throw new RuntimeException("Missing config file at location - ${CONF_FILE_LOCATION}")
+        }
+
+        _properties = JSONUtils.fromJson(configFile.text, ConfigProperties)
     }
 
     List<UrlEntry> getUrls() {
@@ -27,25 +36,20 @@ class ConfigManager {
         return _properties
     }
 
-    synchronized void saveGroup(Group group) {
-        _properties.saveGroup(group)
-    }
-
-    synchronized void deleteGroup(String name) {
-        _properties.removeGroup(name)
-    }
-
     synchronized void saveUrlEntry(UrlEntry urlEntry) {
         _properties.saveUrlEntry(urlEntry)
+        persistConfig()
     }
 
     synchronized void deleteUrlEntry(String name) {
         _properties.removeUrlEntry(name)
+        persistConfig()
     }
 
     private synchronized void persistConfig() {
         // Save to file system
-
+        File file = new File(CONF_FILE_LOCATION)
+        file.write(JSONUtils.toJson(_properties))
     }
 
 

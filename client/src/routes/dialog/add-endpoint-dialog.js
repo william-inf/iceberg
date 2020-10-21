@@ -41,12 +41,11 @@ export class AddEndpointDialog {
 
     activate(model) {
         this.model = (model ? model : this.model);
-        this.authenticationTypes = this.retrieveAuthenticationTypes()
-        this.responseTypes = this.retrieveResponseTypes()
+        this.authenticationTypes = this.retrieveAuthenticationTypes();
+        this.responseTypes = this.retrieveResponseTypes();
     }
 
     submit() {
-        console.log(this.model)
         if (this.isProcessing) return;
         this.triedOnce = true;
 
@@ -55,7 +54,10 @@ export class AddEndpointDialog {
         this.isProcessing = true;
         this.iceberg.saveEndpoint(this.model)
             .then(
-                (json) => { this.controller.ok('Success!') },
+                (json) => {
+                    console.log(json)
+                    this.controller.ok('Success!')
+                },
                 err => {
                     console.log(JSON.stringify(err))
                     this.errorMessage = JSON.stringify(err)

@@ -121,4 +121,25 @@ export class IcebergService {
                 });
     }
 
+    saveEndpoint(endpoint) {
+        return this.postUsingJSON('/api/settings/config/urlEntry', endpoint)
+            .then(json => {
+                return json
+            },
+            error => {
+                throw error;
+            })
+    }
+
+
+    deleteEndpoint(name) {
+        return this.delete('/api/settings/config/urlEntry/' + name)
+            .then(json => {
+                return json
+            },
+            error => {
+                throw error;
+            })
+    }
+
 }

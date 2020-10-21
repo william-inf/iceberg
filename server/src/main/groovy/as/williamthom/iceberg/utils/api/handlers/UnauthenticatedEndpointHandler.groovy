@@ -25,7 +25,7 @@ class UnauthenticatedEndpointHandler implements EndpointHandler {
         try {
             HttpResponse response = client.performGet(urlEntry).blockingFirst()
             return UrlStatusResult.onSuccess(response, urlEntry)
-                    .withBody(response.getBody(Map.class).get())
+                    .withBody(response.body())
         } catch (HttpClientResponseException hcrex) {
             return UrlStatusResult.onSuccess(hcrex.response, urlEntry)
                     .withBody([error: hcrex.message])

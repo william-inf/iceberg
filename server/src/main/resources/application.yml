@@ -10,3 +10,6 @@ micronaut:
         enabled: true
         mapping: "/**"
         paths: ["classpath:public"]
+  http:
+    client:
+      read-timeout:
