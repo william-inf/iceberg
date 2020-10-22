@@ -3,13 +3,13 @@
     <section class="main-container au-animate">
         <div class="row">
             <div class="col-md-12 col-sm-24">
-                <div class="full-col">
-                    <viewer if.bind="config" config.bind="config"></viewer>
+                <div class="text-right">
+                    <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
                 </div>
             </div>
             <div class="col-md-12 col-sm-24">
-                <div class="text-right">
-                    <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
+                <div class="full-col">
+                    <viewer if.bind="config" config.bind="config"></viewer>
                 </div>
             </div>
         </div>

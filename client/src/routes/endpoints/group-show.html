@@ -1,39 +1,22 @@
 <template>
-    <div class="panel" if.bind="endpoints">
-        <table class="table table-borderless dark-table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th repeat.for="column of columns">${column.label}</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            <require from="routes/endpoints/json-window"></require>
-                <template repeat.for="entry of endpoints">
-                    <tr>
-                        <td width="5%">
-                            <span class="badge badge-success" if.bind="entry.status == 'OK'">${entry.status}</span>
-                            <span class="badge badge-danger" if.bind="entry.status != 'OK'">ERROR</span>
-                        </td>
-                        <td>
-                            <div class="text-darker">${entry.urlEntry.name}</div>
-                            <small class="text-darkest">${entry.urlEntry.addr}</small>
-                        </td>
-                        <td repeat.for="column of columns">${entry.body[column.key]}</td>
-                        <td class="text-right" width="5%">
-                            <i class="fas fa-plus pointer text-darkest spin-icon-anim" if.bind="(show != $index)" click.delegate="show = $index"></i>
-                            <i class="fas fa-minus pointer text-darkest spin-icon-anim" if.bind="(show == $index)" click.delegate="show = null"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="${3 + columns.length}">
-                            <json-window content.bind="entry.body" if.bind="(show == $index)"></json-window>
-                        </td>
-                    </tr>
-                </template>
-            </tbody>
-        </table>
+    <div class="row" if.bind="endpoints">
+        <div class="col-24">
+            <div class="box-container" repeat.for="entry of endpoints">
+                <div class="box-container-title">
+                    <div>${entry.urlEntry.name}</div>
+                    <small>${entry.urlEntry.addr}${entry.urlEntry.path}</small>
+                </div>
+                <div class="box-parent">
+                    <div class="box-child ${entry.status === 'OK' ? 'green-bg' : 'red-bg'}">
+                        <div class="box-title">Status</div>
+                        <div class="box-content">${entry.status}</div>
+                    </div>
+                    <div class="box-child ${entry.status === 'OK' ? 'green-bg' : 'red-bg'}" repeat.for="column of columns(entry)">
+                        <div class="box-title">${column.label}</div>
+                        <div class="box-content">${entry.body[column.key]}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
