@@ -1,0 +1,16 @@
+<template>
+  <ux-dialog class="wide-dialog">
+    <ux-dialog-header>
+      <h4>Viewing JSON</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <div class="json-container">
+        <pre if.bind="model" innerhtml.bind="model | jsonFormatter"></pre>
+      </div>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button click.trigger="controller.cancel()" class="btn btn-secondary">Close</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>
+

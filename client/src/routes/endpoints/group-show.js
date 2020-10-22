@@ -1,7 +1,14 @@
-import { inject, bindable, computedFrom } from 'aurelia-framework';
+import {bindable, inject} from 'aurelia-framework';
+import { DialogService } from 'aurelia-dialog';
+import { ViewJsonDialog } from 'routes/dialog/view-json-dialog';
 
+@inject(DialogService)
 export class GroupShow {
     @bindable endpoints = null;
+
+    constructor(dialogService) {
+        this.dialogService = dialogService;
+    }
 
     columns(endpoint) {
         let columns = []
@@ -16,4 +23,13 @@ export class GroupShow {
 
         return columns
     }
+
+    openJsonBody(json) {
+        this.dialogService.open({ viewModel: ViewJsonDialog, model: json, lock: false })
+            .whenClosed(response => {
+                if (!response.wasCancelled) {}
+            });
+    }
+
+
 }
