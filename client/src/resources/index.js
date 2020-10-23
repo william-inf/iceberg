@@ -3,6 +3,7 @@ export function configure(config) {
       './value-converters/object-keys',
       './value-converters/group-by',
       './value-converters/json-formatter',
+      './attributes/bootstrap-tooltip',
       './elements/validatable-field',
       './elements/validatable-select',
       './elements/parent'

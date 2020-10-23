@@ -46,7 +46,10 @@ const dr = dumber({
   // dumber-module-loader is injected automatically by dumber bundler after prepends.
   prepend: [
     // Promise polyfill for IE
-    "node_modules/promise-polyfill/dist/polyfill.min.js"
+    "node_modules/promise-polyfill/dist/polyfill.min.js",
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/popper.js/dist/umd/popper.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js",
   ],
 
   // append after amd loader and all module definitions in entry bundle.
