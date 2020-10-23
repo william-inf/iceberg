@@ -5,8 +5,15 @@
             <div class="col-md-12 col-sm-24">
                 <div class="text-right">
                     <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
-                    <div if.bind="config">
-
+                </div>
+                <div class="stack-container" if.bind="config" repeat.for="url of config.urls">
+                    <div class="stack-header">
+                        <div class="stack-header-title">
+                            ${url.name}
+                        </div>
+                        <div class="stack-header-buttons">
+                            <i class="fa fa-plus"></i>
+                        </div>
                     </div>
                 </div>
             </div>

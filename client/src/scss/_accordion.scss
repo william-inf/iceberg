@@ -1,4 +1,4 @@
-.accordian {
+.accordion {
     background-color: var(--blade-bg);
     border-radius: 3px;
     padding: 1rem;
@@ -22,5 +22,16 @@
                 color: var(--main-text);
             }
         }
+    }
+}
+
+.stack-container {
+
+    .stack-header {
+
+    }
+
+    .stack-body {
+
     }
 }

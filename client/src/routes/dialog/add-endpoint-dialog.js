@@ -55,11 +55,9 @@ export class AddEndpointDialog {
         this.iceberg.saveEndpoint(this.model)
             .then(
                 (json) => {
-                    console.log(json)
                     this.controller.ok('Success!')
                 },
                 err => {
-                    console.log(JSON.stringify(err))
                     this.errorMessage = JSON.stringify(err)
                 }
             )
@@ -82,7 +80,6 @@ export class AddEndpointDialog {
 
     @watch('model.response.type')
     responseTypeHandler() {
-        console.log('fired!');
         this.model.response.values = []
     }
 
