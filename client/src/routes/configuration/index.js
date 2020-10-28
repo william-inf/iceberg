@@ -16,6 +16,12 @@ export class Index {
         this.retrieve();
     }
 
+    orderChanged(orderedItems, change) {
+        /* eslint no-console: 0 */
+        console.log('Ordered items: ' + JSON.stringify(orderedItems));
+        console.log('Change: ' + JSON.stringify(change));
+    }
+
     retrieve() {
         this.iceberg.getConfiguration()
             .then((json) => {

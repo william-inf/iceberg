@@ -27,11 +27,25 @@
 
 .stack-container {
 
-    .stack-header {
+    border-bottom: 1px solid var(--main-text);
+    margin: 1rem 0;
+    color: var(--main-text);
 
+    .stack-header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        .stack-header-title {
+            font-weight: bolder;
+        }
+
+        .stack-header-buttons {
+
+        }
     }
 
     .stack-body {
-
+        padding: 0.5rem 0;
     }
 }

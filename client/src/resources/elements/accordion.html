@@ -1,0 +1,18 @@
+<template>
+  <div class="stack-container">
+    <div class="stack-header">
+      <div class="stack-header-title">
+        <slot name="title"></slot>
+      </div>
+      <div class="stack-header-buttons">
+        <span class="pointer" click.delegate="opened = true" if.bind="opened == null"><i class="fa fa-plus"></i></span>
+        <span class="pointer" click.delegate="opened = null" if.bind="opened == true"><i class="fa fa-minus"></i></span>
+      </div>
+    </div>
+    <div class="stack-body">
+      <div show.bind="opened">
+        <slot name="body"></slot>
+      </div>
+    </div>
+  </div>
+</template>

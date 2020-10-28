@@ -6,6 +6,7 @@ export function configure(config) {
       './attributes/bootstrap-tooltip',
       './elements/validatable-field',
       './elements/validatable-select',
-      './elements/parent'
+      './elements/parent',
+      './elements/accordion'
   ]);
 }

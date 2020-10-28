@@ -6,16 +6,20 @@
                 <div class="text-right">
                     <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
                 </div>
-                <div class="stack-container" if.bind="config" repeat.for="url of config.urls">
-                    <div class="stack-header">
-                        <div class="stack-header-title">
-                            ${url.name}
-                        </div>
-                        <div class="stack-header-buttons">
-                            <i class="fa fa-plus"></i>
-                        </div>
+                <accordion
+                    if.bind="config"
+                    reorderable-repeat.for="url of config.urls"
+                    reorderable-dnd-handler-selector=".handler"
+                    reorderable-after-reordering="orderChanged"
+                >
+                    <div slot="title">
+                        <span class="handler pointer"><i class="fa fa-bars"></i></span>
+                        ${url.name}
                     </div>
-                </div>
+                    <div slot="body">
+                         <i class="fa fa-edit"></i> Edit
+                    </div>
+                </accordion>
             </div>
             <div class="col-md-12 col-sm-24">
                 <div class="full-col">
