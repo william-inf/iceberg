@@ -1,5 +1,6 @@
 package as.williamthom.iceberg.conf
 
+import io.micronaut.http.HttpRequest
 import org.junit.jupiter.api.Test
 
 class ValidatableObjectSpec {
@@ -18,4 +19,5 @@ class ValidatableObjectSpec {
         assert(result).equals(false)
         assert(invalidGroup.errors.size()).equals(2)
     }
+
 }
