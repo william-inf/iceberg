@@ -23,6 +23,10 @@ final class SettingsService {
         configManager.saveUrlEntry(urlEntry)
     }
 
+    void updateUrlEntriesOrder(List<Map<String, String>> order) {
+        configManager.updateUrlEntriesOrder(order)
+    }
+
     void deleteUrlEntry(String name) {
         configManager.deleteUrlEntry(name)
     }

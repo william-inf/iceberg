@@ -131,6 +131,16 @@ export class IcebergService {
             })
     }
 
+    orderUrlEntries(order) {
+        return this.postUsingJSON('/api/settings/config/urlEntry/reorder', order)
+            .then(json => {
+                return json
+            },
+            error => {
+                throw error;
+            })
+    }
+
 
     deleteEndpoint(name) {
         return this.delete('/api/settings/config/urlEntry/' + name)

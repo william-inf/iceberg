@@ -5,6 +5,7 @@ import as.williamthom.iceberg.conf.ConfigProperties
 import as.williamthom.iceberg.conf.Group
 import as.williamthom.iceberg.conf.UrlEntry
 import as.williamthom.iceberg.exceptions.ObjectFailedValidationException
+import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
@@ -43,6 +44,17 @@ class SettingsController extends APIController {
         settingsService.saveUrlEntry(urlEntry)
 
         return urlEntry
+    }
+
+    @Post("/config/urlEntry/reorder")
+    @Patch("/config/urlEntry/reorder")
+    @Produces(MediaType.TEXT_JSON)
+    Map reorderUrls(HttpRequest<Map> httpRequest) {
+        log.info("Controller action POST/PATCH /config/urlEntry/reorder called ...")
+        httpRequest.body
+        settingsService.updateUrlEntriesOrder()
+
+        return [:]
     }
 
     @Delete("/config/urlEntry/{name}")

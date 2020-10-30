@@ -18,8 +18,19 @@ export class Index {
 
     orderChanged(orderedItems, change) {
         /* eslint no-console: 0 */
-        console.log('Ordered items: ' + JSON.stringify(orderedItems));
-        console.log('Change: ' + JSON.stringify(change));
+        let order = _.map(orderedItems, (url, i) => {
+            return { name: url.name, order: i }
+        });
+
+        this.iceberg.orderUrlEntries(order)
+            .then(
+                (json) => {
+                    this.retrieve()
+                },
+                err => {
+                    this.errorMessage = JSON.stringify(err)
+                }
+            )
     }
 
     retrieve() {
@@ -39,4 +50,16 @@ export class Index {
                 }
             });
     }
+
+    editEndpoint(model) {
+        this.dialogService.open({ viewModel: AddEndpointDialog, model: model, lock: false })
+            .whenClosed(response => {
+                if (!response.wasCancelled) {
+                    this.loading = true;
+                    this.retrieve();
+                }
+            });
+    }
+
+
 }

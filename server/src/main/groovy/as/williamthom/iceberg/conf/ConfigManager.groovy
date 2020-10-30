@@ -38,6 +38,13 @@ class ConfigManager {
 
     synchronized void saveUrlEntry(UrlEntry urlEntry) {
         _properties.saveUrlEntry(urlEntry)
+        _properties.orderUrlEntries()
+        persistConfig()
+    }
+
+    synchronized void updateUrlEntriesOrder(List<Map<String, String>> order) {
+        _properties.updateUrlEntriesOrder(order)
+
         persistConfig()
     }
 

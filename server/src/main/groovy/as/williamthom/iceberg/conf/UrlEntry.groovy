@@ -17,6 +17,9 @@ class UrlEntry extends ValidatableObject<UrlEntry> {
     @NotNull
     String group
 
+//    @NotNull
+    Integer order
+
     @NotNull
     EndpointAuthentication authentication
 
