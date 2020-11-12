@@ -4,23 +4,30 @@
       <h3>Backup Management</h3>
     </div>
     <div slot="buttons">
-      <button class="btn btn-primary">Create Backup</button>
+      <button class="btn btn-primary" click.delegate="createBackup()">Create Backup</button>
     </div>
     <div slot="body">
-      <table class="table table-sm dark-table">
+      <table class="table dark-table">
         <thead>
           <tr>
             <th>Name</th>
             <th>Date</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr repeat.for="entry of list">
-            <td>
+          <tr if.bind="loading">
+            <td colspan="3" class="text-center">
+              <i class="fas fa-spinner fa-pulse fa-4x"></i>
+            </td>
+          </tr>
+          <tr else repeat.for="entry of list">
+            <th>
               <div>${entry.name}</div>
               <small>${entry.path}</small>
-            </td>
+            </th>
             <td>${entry.createdAt}</td>
+            <td><i class="fa fa-bars"></i></td>
           </tr>
         </tbody>
       </table>

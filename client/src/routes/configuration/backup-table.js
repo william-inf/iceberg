@@ -16,8 +16,16 @@ export class BackupTable {
     retrieve() {
         this.iceberg.getBackups()
             .then((json) => {
-                this.loading = false;
+                this.loading = false
                 this.list = json
+            })
+    }
+
+    createBackup() {
+        this.iceberg.createBackup()
+            .then(json => {
+                this.loading = false
+                this.retrieve()
             })
     }
 

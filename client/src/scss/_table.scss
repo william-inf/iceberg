@@ -9,6 +9,10 @@
       color: var(--sub-text);
     }
 
+    th, td {
+      border-top: 1px solid var(--muted-text);
+      border-bottom: 1px solid var(--muted-text);
+    }
   }
 }
 
