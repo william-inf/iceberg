@@ -151,4 +151,22 @@ export class IcebergService {
                 });
     }
 
+    getBackups() {
+        return this.fetch('/api/backup')
+            .then(json => {
+                    return json
+                },
+                error => {
+                    throw error;
+                });
+    }
+
+    createBackup() {
+        return this.postUsingJSON('/api/backup', {}).then(json => {
+                return json
+            },
+            error => {
+                throw error;
+            })
+    }
 }

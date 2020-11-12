@@ -1,5 +1,6 @@
 <template>
     <require from="routes/configuration/viewer"></require>
+    <require from="routes/configuration/backup-table"></require>
     <section class="main-container au-animate">
         <div class="row">
             <div class="col-md-12 col-sm-24">
@@ -40,16 +41,9 @@
                         </accordion>
                     </div>
                 </page-section>
-                <page-section>
-                    <div slot="title">
-                        <h3>Backup Management</h3>
-                    </div>
-                    <div slot="buttons">
-                        <button class="btn btn-primary" click.delegate="addEndpoint()">Create Backup</button>
-                    </div>
-                    <div slot="body">
-                    </div>
-                </page-section>
+                <backup-table>
+
+                </backup-table>
             </div>
             <div class="col-md-12 col-sm-24">
                 <viewer if.bind="config" config.bind="config"></viewer>

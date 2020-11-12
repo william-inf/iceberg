@@ -1,0 +1,29 @@
+<template>
+  <page-section>
+    <div slot="title">
+      <h3>Backup Management</h3>
+    </div>
+    <div slot="buttons">
+      <button class="btn btn-primary">Create Backup</button>
+    </div>
+    <div slot="body">
+      <table class="table table-sm dark-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="entry of list">
+            <td>
+              <div>${entry.name}</div>
+              <small>${entry.path}</small>
+            </td>
+            <td>${entry.createdAt}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </page-section>
+</template>

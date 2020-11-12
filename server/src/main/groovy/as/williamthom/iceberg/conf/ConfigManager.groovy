@@ -3,11 +3,13 @@ package as.williamthom.iceberg.conf
 import as.williamthom.iceberg.utils.JSONUtils
 
 import javax.inject.Singleton
+import java.time.LocalDate
 import java.util.concurrent.ConcurrentHashMap;
 
 @Singleton
 class ConfigManager {
 
+    static final String BACKUP_DIR_LOCATION = "/opt/iceberg/backups"
     static final String CONF_FILE_LOCATION = "/opt/iceberg/iceberg_config.conf"
 
     synchronized private ConfigProperties _properties
@@ -23,6 +25,33 @@ class ConfigManager {
 
     List<UrlEntry> getUrls() {
         return _properties.urls
+    }
+
+    List<Backup> getBackups() {
+        File dir = new File(BACKUP_DIR_LOCATION)
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+
+        List<Backup> candidates = []
+
+        dir.eachFile {
+            candidates << new Backup(name: it.name, path: it.path, createdAt: it.lastModified())
+        }
+
+        return candidates
+    }
+
+    Backup makeBackup() {
+        File dir = new File(BACKUP_DIR_LOCATION)
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+
+        File file = new File(BACKUP_DIR_LOCATION + "/iceberg_backup_conf-${LocalDate.now().toString()}".toString())
+        file.write(JSONUtils.toJson(_properties))
+
+        return new Backup(name: file.name, path: file.path, createdAt: file.lastModified())
     }
 
     ConcurrentHashMap<String, UrlEntry> getUrlMap() {
