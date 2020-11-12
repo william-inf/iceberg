@@ -1,4 +1,4 @@
-import {bindable, inject} from 'aurelia-framework';
+import {bindable, inject, computedFrom } from 'aurelia-framework';
 import { DialogService } from 'aurelia-dialog';
 import { ViewJsonDialog } from 'routes/dialog/view-json-dialog';
 
@@ -31,5 +31,9 @@ export class GroupShow {
             });
     }
 
+    @computedFrom('endpoints')
+    get orderedList() {
+        return _.orderBy(this.endpoints, 'urlEntry.order', 'asc')
+    }
 
 }

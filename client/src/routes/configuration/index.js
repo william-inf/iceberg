@@ -61,5 +61,34 @@ export class Index {
             });
     }
 
+    cloneEndpoint(model) {
+        model.name += ' (copy)'
+        this.dialogService.open({ viewModel: AddEndpointDialog, model: model, lock: false })
+            .whenClosed(response => {
+                if (!response.wasCancelled) {
+                    this.loading = true;
+                    this.retrieve();
+                }
+            });
+    }
+
+    logName(name) {
+        console.log(name);
+    }
+
+    deleteEndpoint(name) {
+        this.iceberg.deleteEndpoint(name)
+            .then(
+                () => {},
+                err => {
+                    console.error(JSON.stringify(err))
+                }
+            )
+            .finally(
+                () => {
+                    this.retrieve()
+                });
+    }
+
 
 }

@@ -14,10 +14,10 @@ class ConfigProperties {
         this.urls.add(u)
     }
 
-    void updateUrlEntriesOrder(List<Map<String, String>> order) {
-        order.each {Map<String, String> orderMap
-            UrlEntry urlEntry = this.urls.find {it.name == orderMap.name }
-            urlEntry.order = orderMap.order as Integer
+    void updateUrlEntriesOrder(UrlReorderRequest reorderRequest) {
+        reorderRequest.orderList.each {UrlOrder orderProp ->
+            UrlEntry urlEntry = this.urls.find {it.name == orderProp.name }
+            urlEntry.order = orderProp.order as Integer
 
             saveUrlEntry(urlEntry)
         }

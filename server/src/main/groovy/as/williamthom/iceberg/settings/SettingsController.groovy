@@ -4,10 +4,13 @@ import as.williamthom.iceberg.common.APIController
 import as.williamthom.iceberg.conf.ConfigProperties
 import as.williamthom.iceberg.conf.Group
 import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlOrder
+import as.williamthom.iceberg.conf.UrlReorderRequest
 import as.williamthom.iceberg.exceptions.ObjectFailedValidationException
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.MediaType
+import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Delete
 import io.micronaut.http.annotation.Get
@@ -35,7 +38,7 @@ class SettingsController extends APIController {
     @Post("/config/urlEntry")
     @Patch("/config/urlEntry")
     @Produces(MediaType.TEXT_JSON)
-    UrlEntry saveGroup(UrlEntry urlEntry) {
+    UrlEntry saveUrlEntry(UrlEntry urlEntry) {
         log.info("Controller action POST/PATCH /config/urlEntry called ...")
         if (!urlEntry.isValid()) {
             throw new ObjectFailedValidationException<UrlEntry>(urlEntry)
@@ -49,10 +52,9 @@ class SettingsController extends APIController {
     @Post("/config/urlEntry/reorder")
     @Patch("/config/urlEntry/reorder")
     @Produces(MediaType.TEXT_JSON)
-    Map reorderUrls(HttpRequest<Map> httpRequest) {
+    Map reorderUrls(@Body List<UrlOrder> orderList) {
         log.info("Controller action POST/PATCH /config/urlEntry/reorder called ...")
-        httpRequest.body
-        settingsService.updateUrlEntriesOrder()
+        settingsService.updateUrlEntriesOrder(new UrlReorderRequest(orderList: orderList))
 
         return [:]
     }
@@ -60,7 +62,7 @@ class SettingsController extends APIController {
     @Delete("/config/urlEntry/{name}")
     @Status(HttpStatus.OK)
     @Produces(MediaType.TEXT_JSON)
-    Map deleteGroup(String name) {
+    Map deleteUrlEntry(String name) {
         log.info("Controller action DELETE /config/group called ...")
 
         settingsService.deleteUrlEntry(name)

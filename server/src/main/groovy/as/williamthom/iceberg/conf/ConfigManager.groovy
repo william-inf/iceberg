@@ -42,8 +42,8 @@ class ConfigManager {
         persistConfig()
     }
 
-    synchronized void updateUrlEntriesOrder(List<Map<String, String>> order) {
-        _properties.updateUrlEntriesOrder(order)
+    synchronized void updateUrlEntriesOrder(UrlReorderRequest reorderRequest) {
+        _properties.updateUrlEntriesOrder(reorderRequest)
 
         persistConfig()
     }

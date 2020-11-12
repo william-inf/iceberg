@@ -15,8 +15,9 @@ export class EndpointList {
     retrieve() {
         this.iceberg.getEndpoints()
             .then((json) => {
+                console.log(json)
                 this.loading = false;
-                this.list = json;
+                this.list = _.orderBy(json, 'urlEntry.order', 'asc');
             })
     }
 
@@ -27,7 +28,7 @@ export class EndpointList {
 
     get errored() {
         if (!this.list) return 0
-        return this.list.filter(x => x.status != 'OK').length
+        return this.list.filter(x => x.status !== 'OK').length
     }
 
     get ok() {

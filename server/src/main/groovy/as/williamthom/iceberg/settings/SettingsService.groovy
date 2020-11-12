@@ -4,6 +4,7 @@ import as.williamthom.iceberg.conf.ConfigManager
 import as.williamthom.iceberg.conf.ConfigProperties
 import as.williamthom.iceberg.conf.Group
 import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.conf.UrlReorderRequest
 import groovy.util.logging.Slf4j
 
 import javax.inject.Inject
@@ -23,8 +24,8 @@ final class SettingsService {
         configManager.saveUrlEntry(urlEntry)
     }
 
-    void updateUrlEntriesOrder(List<Map<String, String>> order) {
-        configManager.updateUrlEntriesOrder(order)
+    void updateUrlEntriesOrder(UrlReorderRequest reorderRequest) {
+        configManager.updateUrlEntriesOrder(reorderRequest)
     }
 
     void deleteUrlEntry(String name) {

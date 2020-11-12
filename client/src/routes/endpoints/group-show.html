@@ -1,7 +1,7 @@
 <template>
     <div class="row" if.bind="endpoints">
         <div class="col-24">
-            <div class="box-container" repeat.for="entry of endpoints">
+            <div class="box-container" repeat.for="entry of orderedList">
                 <div class="box-container-toolbar">
                     <div class="box-container-title">
                         <div>${entry.urlEntry.name}</div>

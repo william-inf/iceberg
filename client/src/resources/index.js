@@ -8,6 +8,8 @@ export function configure(config) {
       './elements/validatable-field',
       './elements/validatable-select',
       './elements/parent',
-      './elements/accordion'
+      './elements/accordion',
+      './elements/are-you-sure-button',
+      './elements/page-section',
   ]);
 }

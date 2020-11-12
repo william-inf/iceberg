@@ -111,18 +111,18 @@ export class IcebergService {
                 });
     }
 
-    getConfiguration() {
-        return this.fetch('/api/settings/config')
-            .then(json => {
-                    return json
-                },
-                error => {
-                    throw error;
-                });
-    }
-
     saveEndpoint(endpoint) {
         return this.postUsingJSON('/api/settings/config/urlEntry', endpoint)
+            .then(json => {
+                return json
+            },
+            error => {
+                throw error;
+            })
+    }
+
+    deleteEndpoint(name) {
+        return this.delete('/api/settings/config/urlEntry/' + name)
             .then(json => {
                 return json
             },
@@ -134,22 +134,21 @@ export class IcebergService {
     orderUrlEntries(order) {
         return this.postUsingJSON('/api/settings/config/urlEntry/reorder', order)
             .then(json => {
-                return json
-            },
-            error => {
-                throw error;
-            })
+                    return json
+                },
+                error => {
+                    throw error;
+                })
     }
 
-
-    deleteEndpoint(name) {
-        return this.delete('/api/settings/config/urlEntry/' + name)
+    getConfiguration() {
+        return this.fetch('/api/settings/config')
             .then(json => {
-                return json
-            },
-            error => {
-                throw error;
-            })
+                    return json
+                },
+                error => {
+                    throw error;
+                });
     }
 
 }

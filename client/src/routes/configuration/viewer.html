@@ -1,6 +1,14 @@
 <template>
-    <div class="accordion" if.bind="config">
-        <parent struct.bind="config" key.bind="key"></parent>
-    </div>
+    <page-section>
+        <div slot="title">
+            <h3>Full Configuration File</h3>
+        </div>
+        <div slot="buttons"></div>
+        <div slot="body">
+            <div class="accordion" if.bind="config">
+                <parent struct.bind="config" key.bind="key"></parent>
+            </div>
+        </div>
+    </page-section>
 </template>
 

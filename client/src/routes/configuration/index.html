@@ -3,28 +3,56 @@
     <section class="main-container au-animate">
         <div class="row">
             <div class="col-md-12 col-sm-24">
-                <div class="text-right">
-                    <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
-                </div>
-                <accordion
-                    if.bind="config"
-                    reorderable-repeat.for="url of config.urls"
-                    reorderable-dnd-handler-selector=".handler"
-                    reorderable-after-reordering="orderChanged"
-                >
+                <page-section>
                     <div slot="title">
-                        <span class="handler pointer"><i class="fa fa-bars"></i></span>
-                        ${url.name}
+                        <h3>Endpoint Management</h3>
+                    </div>
+                    <div slot="buttons">
+                        <button class="btn btn-primary" click.delegate="addEndpoint()">Add Endpoint</button>
                     </div>
                     <div slot="body">
-                         <i class="fa fa-edit" click.delegate="editEndpoint(url)"></i> Edit
+                        <accordion
+                            if.bind="config"
+                            reorderable-repeat.for="url of config.urls"
+                            reorderable-dnd-handler-selector=".handler"
+                            reorderable-after-reordering="orderChanged"
+                        >
+                            <div slot="title">
+                                <span class="handler pointer"><i class="fa fa-bars"></i></span>
+                                ${url.name}
+                            </div>
+                            <div slot="body">
+                                <button class="btn btn-primary" click.delegate="cloneEndpoint(url)">
+                                    <i class="fa fa-copy"></i> Clone
+                                </button>
+                                <button class="btn btn-primary" click.delegate="editEndpoint(url)">
+                                    <i class="fa fa-edit"></i> Edit
+                                </button>
+                                <!--                        <button class="btn btn-danger" click.delegate="deleteEndpoint(url.name)">-->
+                                <!--                            <i class="fa fa-times"></i> Delete?-->
+                                <!--                        </button>-->
+                                <are-you-sure-button affirmative-function.call="logName(url.name)">
+                                    <div slot="primarytext">
+                                        <i class="fa fa-times"></i> Delete?
+                                    </div>
+                                </are-you-sure-button>
+                            </div>
+                        </accordion>
                     </div>
-                </accordion>
+                </page-section>
+                <page-section>
+                    <div slot="title">
+                        <h3>Backup Management</h3>
+                    </div>
+                    <div slot="buttons">
+                        <button class="btn btn-primary" click.delegate="addEndpoint()">Create Backup</button>
+                    </div>
+                    <div slot="body">
+                    </div>
+                </page-section>
             </div>
             <div class="col-md-12 col-sm-24">
-                <div class="full-col">
-                    <viewer if.bind="config" config.bind="config"></viewer>
-                </div>
+                <viewer if.bind="config" config.bind="config"></viewer>
             </div>
         </div>
     </section>
