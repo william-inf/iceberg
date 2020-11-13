@@ -59,9 +59,17 @@
             flex-flow: column wrap;
             justify-content: space-between;
 
-            -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
-            -moz-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.25);
+
+            transition: box-shadow 200ms ease-in-out;
+
+            &:hover {
+                -webkit-box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.5);
+                box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.5);
+            }
 
             &.red-bg {
                 background-image: linear-gradient(to right top, #d82447, #d32253, #cc245e, #c42868, #bb2d71);
