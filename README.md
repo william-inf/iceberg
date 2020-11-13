@@ -1,6 +1,6 @@
 # Iceberg
 
-Iceberg is a simple application that can probe REST endpoints and present selected data on a web page.
+Iceberg is a simple application that can probe endpoints and present selected data on a web page.
 
 *Note: Under active development and not functional yet.*
 
