@@ -21,10 +21,10 @@
         <div class="ico">
           <i class="fas fa-search"></i>
         </div>
-        <div class="ico spin-icon-anim" click.delegate="toggleLightMode()" if.bind="lite == null">
+        <div class="ico spin-icon-anim" bootstrap-tooltip="Enable dark UI" click.delegate="toggleLightMode()" if.bind="lite == null">
           <i class="fas fa-sun"></i>
         </div>
-        <div class="ico spin-icon-anim" click.delegate="toggleLightMode()" if.bind="lite == true">
+        <div class="ico spin-icon-anim" bootstrap-tooltip="Enable light UI" click.delegate="toggleLightMode()" if.bind="lite == true">
           <i class="fas fa-moon "></i>
         </div>
       </div>
@@ -46,9 +46,6 @@
                     <a class="${row.isActive ? 'active' : ''} anim-link" click.delegate="navigateMenu(row.href)">
                       ${row.title}
                     </a>
-<!--                    <div>-->
-<!--                      <small>${row.config.description}</small>-->
-<!--                    </div>-->
                   </li>
                 </ul>
               </div>

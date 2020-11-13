@@ -7,6 +7,11 @@
       <button class="btn btn-primary" click.delegate="createBackup()">Create Backup</button>
     </div>
     <div slot="body">
+      <alert level="warning">
+        <div slot="message">
+          Back ups can be made on demand. They are stored per day, but will be overridden if run multiple times a day.
+        </div>
+      </alert>
       <table class="table dark-table">
         <thead>
           <tr>

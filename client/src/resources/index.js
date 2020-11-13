@@ -11,5 +11,6 @@ export function configure(config) {
       './elements/accordion',
       './elements/are-you-sure-button',
       './elements/page-section',
+      './elements/alert',
   ]);
 }

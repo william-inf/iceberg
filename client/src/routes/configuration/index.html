@@ -29,10 +29,7 @@
                                 <button class="btn btn-primary" click.delegate="editEndpoint(url)">
                                     <i class="fa fa-edit"></i> Edit
                                 </button>
-                                <!--                        <button class="btn btn-danger" click.delegate="deleteEndpoint(url.name)">-->
-                                <!--                            <i class="fa fa-times"></i> Delete?-->
-                                <!--                        </button>-->
-                                <are-you-sure-button affirmative-function.call="logName(url.name)">
+                                <are-you-sure-button affirmative-function.call="deleteEndpoint(url.name)">
                                     <div slot="primarytext">
                                         <i class="fa fa-times"></i> Delete?
                                     </div>

@@ -1,0 +1,8 @@
+<template>
+    <div class="alert alert-${level} ${dismissable ? 'alert-dismissible' : ''} fade show" role="alert">
+        <slot name="message"></slot>
+        <button if.bind="dismissable" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span class="alert-icon" aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+    </div>
+</template>
