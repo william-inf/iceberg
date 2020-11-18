@@ -31,39 +31,85 @@
                             <div class="title-container-label">
                                 main-blade
                             </div>
+                            <div class="title-container-icons" show.bind="active == null">
+                                <a class="title-container-icon" bootstrap-tooltip="Add New Endpoint" click.trigger="addEndpoint()"><i class="fa fa-folder-plus"></i></a>
+                                <a class="title-container-icon" bootstrap-tooltip="Edit Config" route-href="route: configuration"><i class="fas fa-clipboard-check"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="content-body">
-                        <div class="content-header">
-                            <div class="content-header-text">// Main</div>
-                        </div>
                         <div class="content-text">
                             <div id="main-blade-content">
                                 <div class="header">
-                                    Welcome
-                                </div>
-                                <div class="directory">
-                                    <h6 class="mb-3">// Monitoring
-                                        <span class="text-danger" if.bind="errored > 0">
-                                            <i class="fas fa-exclamation-triangle text-danger"></i> ${errored} are errored.
-                                            <span class="pointer" if.bind="showErrored == null" click.delegate="showErrored = true">Show errored.</span>
-                                            <span class="pointer" if.bind="showErrored == true" click.delegate="showErrored = null">Hide errored.</span>
-                                        </span>
-                                    </h6>
-                                    <div class="root" repeat.for="group of list | groupBy: 'group'">
-                                        <span class="pointer" click.delegate="opened = true" if.bind="opened == null">
-                                            <i class="fas fa-folder"></i> ${group.key}
-                                        </span>
-                                        <span class="pointer" click.delegate="opened = null" if.bind="opened === true">
-                                            <i class="fas fa-folder-open"></i> ${group.key}
-                                        </span>
-                                        <i class="fas fa-eye pointer" click.delegate="active = group.key"></i>
-                                        <div class="child" repeat.for="item of group.items" if.bind="opened == true || showErrored == true">
-                                           <span style="font-weight: bolder">|</span>
-                                            <span class="${showErrored && item.status != 'OK' ? 'text-danger' : ''}">${item.urlEntry.addr}</span>
+                                    <div class="row">
+                                        <div class="col-md-24 col-lg-8">
+                                            <dash-tile type="${errored > 0 ? 'danger' : 'primary'}">
+                                                <div slot="header">
+                                                    Total Under Monitoring
+                                                </div>
+                                                <div slot="body">
+                                                    <div class="text-center" style="font-size: 1.5rem;">
+                                                        ${total}
+                                                    </div>
+                                                </div>
+                                            </dash-tile>
+                                        </div>
+                                        <div class="col-md-24 col-lg-8">
+                                            <dash-tile type="${errored > 0 ? 'danger' : 'primary'}">
+                                                <div slot="header">
+                                                    Needs Attention
+                                                </div>
+                                                <div slot="body">
+                                                    <div class="text-center" style="font-size: 1.5rem;">
+                                                        ${errored}
+                                                    </div>
+                                                </div>
+                                            </dash-tile>
+                                        </div>
+                                        <div class="col-md-24 col-lg-8">
+                                            <dash-tile type="${ok > 0 ? 'success' : 'primary'}">
+                                                <div slot="header">
+                                                    Status Ok
+                                                </div>
+                                                <div slot="body">
+                                                    <div class="text-center" style="font-size: 1.5rem;">
+                                                        ${ok}
+                                                    </div>
+                                                </div>
+                                            </dash-tile>
                                         </div>
                                     </div>
-                                    <span class="text-darkest">...</span>
+                                    <div class="row">
+                                        <div class="col-md-24 col-lg-12">
+                                            <dash-tile type="${errored > 0 ? 'danger' : 'primary'}">
+                                                <div slot="header">
+                                                    Monitoring
+                                                    <span class="text-danger" if.bind="errored > 0">
+                                                        <i class="fas fa-exclamation-triangle text-danger"></i> ${errored} are errored.
+                                                        <span class="pointer" if.bind="showErrored == null" click.delegate="showErrored = true">Show errored.</span>
+                                                        <span class="pointer" if.bind="showErrored == true" click.delegate="showErrored = null">Hide errored.</span>
+                                                    </span>
+                                                </div>
+                                                <div slot="body">
+                                                    <div class="directory">
+                                                        <div class="root" repeat.for="group of list | groupBy: 'group'">
+                                                            <span class="pointer" click.delegate="opened = true" if.bind="opened == null">
+                                                                <i class="fas fa-folder"></i> ${group.key}
+                                                            </span>
+                                                            <span class="pointer" click.delegate="opened = null" if.bind="opened === true">
+                                                                <i class="fas fa-folder-open"></i> ${group.key}
+                                                            </span>
+                                                            <i class="fas fa-eye pointer" click.delegate="active = group.key"></i>
+                                                            <div class="child" repeat.for="item of group.items" if.bind="opened == true || showErrored == true">
+                                                                <span style="font-weight: bolder">|</span>
+                                                                <span class="${showErrored && item.status != 'OK' ? 'text-danger' : ''}">${item.urlEntry.addr}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </dash-tile>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -76,8 +122,7 @@
                 </div>
             </div>
             <template repeat.for="group of list | groupBy: 'group'">
-                <div
-                    class="blade ${active == group.key ? 'active' : ''}"
+                <div class="blade ${active == group.key ? 'active' : ''}"
                     style.bind="calcZIndex($index)"
                 >
                     <div class="blade-content">
@@ -95,7 +140,7 @@
                         <div class="content-body">
                             <div class="content-header">
                                 <div class="content-header-text">
-                                    // ${group.key}
+                                    ${group.key}
                                     <span class="badge badge-primary">${group.items.length} nodes</span>
                                 </div>
                                 <div class="content-header-close" click.delegate="active = null">

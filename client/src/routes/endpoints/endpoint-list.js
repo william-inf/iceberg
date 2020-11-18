@@ -1,14 +1,17 @@
 import { inject, computedFrom } from 'aurelia-framework';
-import {combo} from 'aurelia-combo';
+import { combo } from 'aurelia-combo';
+import { DialogService } from 'aurelia-dialog';
+import { AddEndpointDialog } from 'routes/dialog/add-endpoint-dialog';
 
-@inject('Iceberg')
+@inject('Iceberg', DialogService)
 export class EndpointList {
 
     active = null;
     list = [];
 
-    constructor(iceberg) {
+    constructor(iceberg, dialogService) {
         this.iceberg = iceberg;
+        this.dialogService = dialogService;
         this.loading = true;
     }
 
@@ -23,6 +26,16 @@ export class EndpointList {
                 this.loading = false;
                 this.list = _.orderBy(json, 'urlEntry.order', 'asc');
             })
+    }
+
+    addEndpoint() {
+        this.dialogService.open({ viewModel: AddEndpointDialog, model: null, lock: false })
+            .whenClosed(response => {
+                if (!response.wasCancelled) {
+                    this.loading = true;
+                    this.retrieve();
+                }
+            });
     }
 
     calcZIndex(idx) {
@@ -41,6 +54,14 @@ export class EndpointList {
         if (!this.list) return 0;
         return this.list.filter(x => x.status === 'OK').length;
     }
+
+    @computedFrom('list')
+    get total() {
+        if (!this.list) return 0;
+        return this.list.length;
+    }
+
+
 
     @computedFrom('list')
     get groups() {

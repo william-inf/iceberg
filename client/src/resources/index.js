@@ -12,5 +12,6 @@ export function configure(config) {
       './elements/are-you-sure-button',
       './elements/page-section',
       './elements/alert',
+      './elements/dash-tile',
   ]);
 }
