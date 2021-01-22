@@ -40,6 +40,7 @@ Follow the below format and include the addresses you would like to probe.
 
 - Add supporting URLs to groups
 - Build config from web portal
+- Make names dir safe
 
 ## Build
 

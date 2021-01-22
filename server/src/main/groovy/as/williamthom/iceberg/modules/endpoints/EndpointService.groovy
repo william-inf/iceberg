@@ -1,4 +1,4 @@
-package as.williamthom.iceberg.endpoints
+package as.williamthom.iceberg.modules.endpoints
 
 import as.williamthom.iceberg.conf.ConfigManager
 import as.williamthom.iceberg.conf.UrlEntry

@@ -1,7 +1,6 @@
-package as.williamthom.iceberg
+package as.williamthom.iceberg.modules
 
-import as.williamthom.iceberg.common.ErrorResponse
-import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.modules.common.ErrorResponse
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import io.micronaut.http.HttpRequest
@@ -11,7 +10,6 @@ import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Error
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Produces
-import io.reactivex.Maybe
 
 @Slf4j
 @CompileStatic

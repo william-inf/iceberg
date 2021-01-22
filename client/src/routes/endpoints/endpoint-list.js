@@ -2,12 +2,14 @@ import { inject, computedFrom } from 'aurelia-framework';
 import { combo } from 'aurelia-combo';
 import { DialogService } from 'aurelia-dialog';
 import { AddEndpointDialog } from 'routes/dialog/add-endpoint-dialog';
+import _ from 'lodash';
 
 @inject('Iceberg', DialogService)
 export class EndpointList {
 
     active = null;
     list = [];
+    pollingStatus = [];
 
     constructor(iceberg, dialogService) {
         this.iceberg = iceberg;
@@ -20,12 +22,22 @@ export class EndpointList {
     }
 
     retrieve() {
-        this.iceberg.getEndpoints()
+        Promise.all([
+            this.iceberg.getEndpoints()
+            .then((json) => {
+                this.list = _.orderBy(
+                    json,
+                    'urlEntry.order', 'asc'
+                );
+            }),
+            this.iceberg.getPollingStatus()
             .then((json) => {
                 console.log(json)
-                this.loading = false;
-                this.list = _.orderBy(json, 'urlEntry.order', 'asc');
-            })
+                this.pollingStatus = _.orderBy(json, 'addr', 'asc');
+            }),
+        ]).then(
+            () => this.loading = false
+        )
     }
 
     addEndpoint() {
@@ -61,12 +73,11 @@ export class EndpointList {
         return this.list.length;
     }
 
-
-
     @computedFrom('list')
     get groups() {
         if (!this.list) return 0;
-        return this.list.map(x => x.group)
+        return this.list
+            .map(x => x.group)
             .filter((value, index, self) => self.indexOf(value) === index);
     }
 

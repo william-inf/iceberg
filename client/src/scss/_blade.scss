@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  height: calc(100vh - 3rem - 3px);
+  height: calc(100vh - 3rem);
 
   .blade-body {
     display: flex;
@@ -13,7 +13,7 @@
     .blade {
       width: 2.5rem;
       background-color: var(--blade-container-bg);
-      transition: width 200ms ease-in-out;
+      transition: width 300ms ease-in-out;
       white-space: nowrap;
       overflow: hidden;
 
@@ -36,8 +36,6 @@
             color: var(--blade-text-bright);
           }
         }
-
-
       }
 
       &.blade-main {
@@ -46,8 +44,8 @@
         .blade-content {
           .content-title {
             color: var(--blade-text-bright);
-            width: 4.75rem;
-            background-color: #1E2129;
+            width: 3rem;
+            background-color: #0e0e0e; //#1E2129;
           }
         }
 
@@ -106,6 +104,10 @@
 
             .title-container-label {
               font-weight: 600;
+
+              &.main {
+                color: $gray-600 !important;
+              }
             }
 
             .title-container-icons {
@@ -113,13 +115,12 @@
 
               .title-container-icon {
                 margin-bottom: 1rem;
-                color: $white !important;
-                background-color: lighten(#1E2129, 10%);
-                padding: 0.75rem;
-                border-radius: 2rem;
+                color: #868e96;
+                padding: 0.5rem;
 
                 &:hover {
                   background-color: $blue;
+                  color: $white;
                   cursor: pointer;
                 }
               }

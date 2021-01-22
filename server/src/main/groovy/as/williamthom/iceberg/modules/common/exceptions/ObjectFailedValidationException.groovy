@@ -1,4 +1,4 @@
-package as.williamthom.iceberg.exceptions
+package as.williamthom.iceberg.modules.common.exceptions
 
 import as.williamthom.iceberg.conf.ValidatableObject
 

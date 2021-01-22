@@ -169,4 +169,14 @@ export class IcebergService {
                 throw error;
             })
     }
+
+    getPollingStatus() {
+        return this.fetch('/api/status/polling')
+            .then(json => {
+                    return json
+                },
+                error => {
+                    throw error;
+                });
+    }
 }

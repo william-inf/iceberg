@@ -1,8 +1,7 @@
-package as.williamthom.iceberg.settings
+package as.williamthom.iceberg.modules.settings
 
 import as.williamthom.iceberg.conf.ConfigManager
 import as.williamthom.iceberg.conf.ConfigProperties
-import as.williamthom.iceberg.conf.Group
 import as.williamthom.iceberg.conf.UrlEntry
 import as.williamthom.iceberg.conf.UrlReorderRequest
 import groovy.util.logging.Slf4j

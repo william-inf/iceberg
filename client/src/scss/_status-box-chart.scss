@@ -1,0 +1,35 @@
+.status-boxes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .status-box {
+        height: 25px;
+        width: 10px;
+        flex-grow: 1;
+        margin-left: 10px;
+        border-radius: 2px;
+
+        &:hover {
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        &.ok {
+            background-image: linear-gradient(to right top, #00b17f, #00b086, #00b08d, #00af93, #01ae98);
+        }
+
+        &.error {
+            background-image: linear-gradient(to right top, #d82447, #d32253, #cc245e, #c42868, #bb2d71);
+        }
+
+        &:first-child {
+            margin-left:0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

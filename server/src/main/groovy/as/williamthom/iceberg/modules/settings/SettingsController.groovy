@@ -1,13 +1,11 @@
-package as.williamthom.iceberg.settings
+package as.williamthom.iceberg.modules.settings
 
-import as.williamthom.iceberg.common.APIController
 import as.williamthom.iceberg.conf.ConfigProperties
-import as.williamthom.iceberg.conf.Group
 import as.williamthom.iceberg.conf.UrlEntry
 import as.williamthom.iceberg.conf.UrlOrder
 import as.williamthom.iceberg.conf.UrlReorderRequest
-import as.williamthom.iceberg.exceptions.ObjectFailedValidationException
-import io.micronaut.http.HttpRequest
+import as.williamthom.iceberg.modules.APIController
+import as.williamthom.iceberg.modules.common.exceptions.ObjectFailedValidationException
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Body
@@ -45,7 +43,6 @@ class SettingsController extends APIController {
         }
 
         settingsService.saveUrlEntry(urlEntry)
-
         return urlEntry
     }
 

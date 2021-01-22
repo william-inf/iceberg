@@ -1,7 +1,7 @@
-package as.williamthom.iceberg.endpoints
+package as.williamthom.iceberg.modules.endpoints
 
-import as.williamthom.iceberg.common.APIController
 import as.williamthom.iceberg.conf.UrlEntry
+import as.williamthom.iceberg.modules.APIController
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import io.micronaut.http.MediaType
@@ -29,6 +29,6 @@ class EndpointController extends APIController {
     @Produces(MediaType.TEXT_JSON)
     Maybe<UrlEntry> show(final String code) {
         log.info("Controller action endpoint/show/${code} called ...")
-        return endpointService.findByCode(code)
+        return endpointService.findByCode(code).onErrorComplete()
     }
 }

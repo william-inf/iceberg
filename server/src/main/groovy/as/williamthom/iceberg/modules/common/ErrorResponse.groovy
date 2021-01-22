@@ -1,4 +1,4 @@
-package as.williamthom.iceberg.common
+package as.williamthom.iceberg.modules.common
 
 import io.micronaut.http.HttpStatus
 
@@ -26,12 +26,3 @@ class ErrorResponse extends BaseAPIResponse {
 
 }
 
-abstract class BaseAPIResponse {
-    HttpStatus status
-    String message
-
-    BaseAPIResponse(HttpStatus status, String message) {
-        this.status = status
-        this.message = message
-    }
-}

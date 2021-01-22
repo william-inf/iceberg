@@ -1,0 +1,8 @@
+<template>
+  <div repeat.for="status of pollingStatus">
+    <span>${status.name}</span>
+    <div class="status-boxes">
+      <div class="status-box ${polling.status == 'OK' ? 'ok' : 'error'}" repeat.for="polling of status.results"></div>
+    </div>
+  </div>
+</template>

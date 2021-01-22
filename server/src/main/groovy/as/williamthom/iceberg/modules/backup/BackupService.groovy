@@ -1,4 +1,4 @@
-package as.williamthom.iceberg.backup
+package as.williamthom.iceberg.modules.backup
 
 import as.williamthom.iceberg.conf.Backup
 import as.williamthom.iceberg.conf.ConfigManager

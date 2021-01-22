@@ -1,5 +1,7 @@
-package as.williamthom.iceberg.status
+package as.williamthom.iceberg.modules.status
 
+import as.williamthom.iceberg.utils.polling.PollFileHandler
+import as.williamthom.iceberg.utils.polling.UrlEntryPollResults
 import as.williamthom.iceberg.conf.UrlEntry
 import as.williamthom.iceberg.conf.UrlStatusResult
 import as.williamthom.iceberg.utils.api.handlers.EndpointHandler
@@ -29,6 +31,20 @@ class StatusService {
             .onErrorComplete()
     }
 
+    Maybe<UrlEntryPollResults> getPollResult(final String name) {
+        log.info("Retrieving Poll results for URL entry for ${name}")
+        UrlEntryPollResults results = PollFileHandler.getPollResult(name)
+        return Maybe.just(results)
+                .subscribeOn(Schedulers.io())
+    }
+
+    Maybe<List<UrlEntryPollResults>> getAllPollResults() {
+        log.info("Retrieving all poll results")
+        List<UrlEntryPollResults> results = PollFileHandler.getAllPollResults()
+        return Maybe.just(results)
+                .subscribeOn(Schedulers.io())
+    }
+
     private Supplier<UrlStatusResult> callUrlEntry(final UrlEntry entry) {
         EndpointHandler endpointHandler = endpointHandlerFactory.forType(entry.authentication.type)
         ResponseHandler responseHandler = responseHandlerFactory.forType(entry.response.type)
@@ -42,4 +58,6 @@ class StatusService {
             return result
         }
     }
+
+
 }

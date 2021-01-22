@@ -1,4 +1,4 @@
-package as.williamthom.iceberg.status
+package as.williamthom.iceberg.modules.status
 
 import as.williamthom.iceberg.conf.UrlStatusResult
 import io.micronaut.http.annotation.Get

@@ -1,7 +1,7 @@
-package as.williamthom.iceberg.common
+package as.williamthom.iceberg.modules
 
-import as.williamthom.iceberg.conf.Group
-import as.williamthom.iceberg.exceptions.ObjectFailedValidationException
+import as.williamthom.iceberg.modules.common.ErrorResponse
+import as.williamthom.iceberg.modules.common.exceptions.ObjectFailedValidationException
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.MediaType

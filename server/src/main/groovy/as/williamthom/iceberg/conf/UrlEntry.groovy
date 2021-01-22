@@ -17,7 +17,6 @@ class UrlEntry extends ValidatableObject<UrlEntry> {
     @NotNull
     String group
 
-//    @NotNull
     Integer order
 
     @NotNull
@@ -25,4 +24,6 @@ class UrlEntry extends ValidatableObject<UrlEntry> {
 
     @NotNull
     UrlResponseConfig response
+
+    Boolean pollStatus
 }
